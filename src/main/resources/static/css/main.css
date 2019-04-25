@@ -1,0 +1,243 @@
+body {
+    background: #63767f url("static/assets/images/city_background.jpg") repeat-x;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+div#header-logo img {
+    margin: -15px 0 0 222px;
+}
+
+div#header, div.box h2, div.box div.tabs, div#top-menu-notifications-list h2 {
+    border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+    color: white;
+}
+
+h3, strong {
+    color: white;
+}
+
+div#header {
+    /*background-image: url();*/
+}
+
+div#header {
+    height: 65px;
+}
+
+div#header-commands {
+    margin: 10px 22px 0 0;
+    float: right;
+}
+
+a {
+    color: #09639a;
+    text-decoration: none;
+}
+
+div.avatar, div.avatar_clean {
+    background-size: 100% !important;
+}
+
+div.avatar {
+    float: left;
+    margin-right: 10px;
+}
+
+div.avatar, div.avatar_clean {
+    height: 156px;
+    width: 114px;
+}
+
+div#header-logo img {
+    margin: -15px 0 0 222px;
+}
+
+div#detachable {
+    width: 775px;
+    position: static;
+}
+
+div#header-side-commands {
+    display: none;
+    position: relative;
+    left: 15px;
+    top: 1px;
+    width: 25px;
+    float: right;
+    margin-left: -40px;
+}
+
+div#character-tools {
+    /*background-image: url(Images/bgr-character-tools.png);*/
+}
+
+div#ppm-detachable-shadow {
+    width: 775px;
+    position: static;
+    display: none;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+html, input, select, textarea {
+    font-family: "Lucida Grande", Verdana, Sans-Serif;
+    font-size: 11px;
+}
+
+#headbar {
+    background: transparent url("https://s36-tr.bitefight.gameforge.com/img/layout/h2.jpg") repeat-x;
+    font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
+    height: 32px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+}
+
+div#ppm-wrapper {
+    margin: 30px auto 0;
+    width: 775px;
+    top: 50%;
+}
+
+div {
+    display: block;
+}
+
+html, input, select, textarea {
+    font-family: "Lucida Grande", Verdana, Sans-Serif;
+    font-size: 11px;
+}
+
+div#detachable {
+    width: 775px;
+    position: static;
+}
+
+div#top-menu {
+    height: 32px;
+    margin-top: 15%;
+    box-shadow: inset 0px 0px 10px rgba(255, 225, 154, 0.5);
+    background-color: bisque;
+    z-index: 9999;
+}
+
+div#top-menu-nav {
+    float: left;
+    width: 670px;
+    height: 32px;
+}
+
+div#top-menu-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 9px 0 0 0;
+    text-align: center;
+}
+
+ul, menu, dir {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+div#top-menu-nav ul li {
+    display: inline;
+}
+
+ul li {
+    list-style-type: disc;
+    margin: 0 0 5px;
+    padding: 0;
+}
+
+div#ppm-main {
+    background-color: rgba(255, 225, 154, 0.58);
+}
+
+div#ppm-main {
+    clear: both;
+    overflow: auto;
+    margin: 0;
+    border-radius: 10px;
+}
+
+div#ppm-content {
+    margin: 0 0 0 25px;
+    float: left;
+    width: 489px;
+}
+
+div.box, table.data tr.even td, div.editor a.button:hover {
+    background: #eee;
+}
+
+div.box {
+    margin: 0 0 15px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+.ofauto {
+    overflow: auto;
+}
+
+div.charMainToolbox {
+    float: left;
+    width: 25%;
+    margin-right: 15px !important;
+}
+
+div.charMainValues {
+    float: left;
+    width: 30%;
+    margin-right: 20px !important;
+}
+
+div.charMainInfo {
+    float: left;
+    width: 35%;
+    margin-right: 0 !important;
+}
+
+.clear {
+    clear: both;
+}
+
+div.box, table.data tr.even td, div.editor a.button:hover {
+    background: rgba(255, 230, 172, 0.61);
+}
+
+div.box {
+    margin: 0 0 15px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    border-radius: 20px;
+}
+
+div#ppm-sidemenu {
+    margin: 0 25px 0 0;
+    float: right;
+    width: 220px;
+}
+
+div#ppm-footer {
+    background-color: white;
+    background-repeat: no-repeat;
+}
