@@ -5,569 +5,289 @@
     <title>City of Crime - Joni-Petteri Ukonmäki</title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{../static/css/style.css}" />
-    <style>
-        body {
-            background: #63767f url("city_background.jpg") repeat-x;
-        }
-
-        div#topcolumn {
-            margin: 0 25px;
-        }
-
-        div.StartImage {
-            background: url("https://www.popmundo.com/Static/Images/Front/Megadome.jpg") no-repeat;
-            height: 300px;
-            max-width: 725px;
-        }
-
-        div#header img.logo,
-        div.gameimage,
-        div#headermenu,
-        div.forumMessageHeader {
-            margin-bottom: 15px;
-        }
-
-        form {
-            display: block;
-            margin-top: 0em;
-        }
-
-        div#header-logo img {
-            margin: -15px 0 0 222px;
-        }
-
-        div#header,
-        div.box h2,
-        div.box div.tabs,
-        div#top-menu-notifications-list h2 {
-            border-radius: 7px 7px 0 0;
-            -moz-border-radius: 7px 7px 0 0;
-            -webkit-border-radius: 7px 7px 0 0;
-            color: white;
-        }
-
-        h3,
-        strong {
-            color: white;
-        }
-
-        div#header {
-            /*background-image: url();*/
-        }
-
-        div#header {
-            height: 65px;
-        }
-
-        div#header-commands {
-            margin: 10px 22px 0 0;
-            float: right;
-        }
-
-        a {
-            color: #09639a;
-            text-decoration: none;
-        }
-
-        div.avatar,
-        div.avatar_clean {
-            background-size: 100% !important;
-        }
-
-        div.avatar {
-            float: left;
-            margin-right: 10px;
-        }
-
-        div.avatar,
-        div.avatar_clean {
-            height: 156px;
-            width: 114px;
-        }
-
-        div#header-logo img {
-            margin: -15px 0 0 222px;
-        }
-
-        div#detachable {
-            width: 775px;
-            position: static;
-        }
-
-        div#header-side-commands {
-            display: none;
-            position: relative;
-            left: 15px;
-            top: 1px;
-            width: 25px;
-            float: right;
-            margin-left: -40px;
-        }
-
-        div#character-tools {
-            /*background-image: url(Images/bgr-character-tools.png);*/
-        }
-
-        div#ppm-detachable-shadow {
-            width: 775px;
-            position: static;
-            display: none;
-        }
-
-        a:-webkit-any-link {
-            color: -webkit-link;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        html,
-        input,
-        select,
-        textarea {
-            font-family: "Lucida Grande", Verdana, Sans-Serif;
-            font-size: 11px;
-        }
-
-        #headbar {
-            background: transparent url("https://s36-tr.bitefight.gameforge.com/img/layout/h2.jpg") repeat-x;
-            font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
-            height: 32px;
-            left: 0;
-            padding: 0;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            width: 100%;
-            z-index: 3000;
-        }
-
-        div#ppm-wrapper {
-            margin: 30px auto 0;
-            width: 775px;
-            top: 50%;
-        }
-
-        div {
-            display: block;
-        }
-
-        html,
-        input,
-        select,
-        textarea {
-            font-family: "Lucida Grande", Verdana, Sans-Serif;
-            font-size: 11px;
-        }
-
-        div#detachable {
-            width: 775px;
-            position: static;
-        }
-
-        div#top-menu {
-            height: 32px;
-            margin-top: 15%;
-            box-shadow: inset 0px 0px 10px rgba(255, 225, 154, 0.5);
-            background-color: bisque;
-            z-index: 9999;
-        }
-
-        div#top-menu-nav {
-            float: left;
-            width: 670px;
-            height: 32px;
-        }
-
-        div#top-menu-nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 9px 0 0 0;
-            text-align: center;
-        }
-
-        ul,
-        menu,
-        dir {
-            display: block;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
-        }
-
-        div#top-menu-nav ul li {
-            display: inline;
-        }
-
-        ul li {
-            list-style-type: disc;
-            margin: 0 0 5px;
-            padding: 0;
-        }
-
-        div#ppm-main {
-            background-color: rgba(255, 225, 154, 0.58);
-        }
-
-        div#ppm-main {
-            clear: both;
-            overflow: auto;
-            margin: 0;
-            border-radius: 10px;
-        }
-
-        div#ppm-content {
-            margin: 0 0 0 25px;
-            float: left;
-            width: 489px;
-        }
-
-        div.box,
-        table.data tr.even td,
-        div.editor a.button:hover {
-            background: #eee;
-        }
-
-        div.box {
-            margin: 0 0 15px;
-            padding: 10px;
-            overflow-wrap: break-word;
-        }
-
-        .ofauto {
-            overflow: auto;
-        }
-
-        div.charMainToolbox {
-            float: left;
-            width: 25%;
-            margin-right: 15px !important;
-        }
-
-        div.charMainValues {
-            float: left;
-            width: 30%;
-            margin-right: 20px !important;
-        }
-
-        div.charMainInfo {
-            float: left;
-            width: 35%;
-            margin-right: 0 !important;
-        }
-
-        .clear {
-            clear: both;
-        }
-
-        div.box,
-        table.data tr.even td,
-        div.editor a.button:hover {
-            background: rgba(255, 230, 172, 0.61);
-        }
-
-        div.box {
-            margin: 0 0 15px;
-            padding: 10px;
-            overflow-wrap: break-word;
-            border-radius: 20px;
-        }
-
-        div#ppm-sidemenu {
-            margin: 0 25px 0 0;
-            float: right;
-            width: 220px;
-        }
-
-        div#ppm-footer {
-            background-color: white;
-            background-repeat: no-repeat;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
-    <form name="javaForm" method="post" action="./Character" id="javaForm">
-        <div id="header" role="banner">
-            <div id="headbar" class="cityofcrime" style="display: block;"></div>
-        </div>
-        <div id="ppm-wrapper">
-            <div id="ppm-main">
-                <div id="topcolumn">
-                    <div class="StartImage gameimage"></div>
-                </div>
-                <div id="ppm-content" role="main" class="content">
+<form name="javaForm" method="post" action="" id="javaForm">
+    <div id="header" role="banner">
+        <div id="headbar" class="cityofcrime" style="display: block;"></div>
+    </div>
+    <div id="ppm-wrapper">
+        <div id="ppm-main">
+            <div id="topcolumn">
+                <div class="StartImage gameimage"></div>
+            </div>
+            <div id="ppm-content" role="main" class="content">
 
-                    <h1 id="ctl00_cphLeftColumn_hdrWelcome">Welcome to Popmundo</h1>
-                    <p>Popmundo is an online role-playing game and community where the players strive for fame in a
-                        virtual music industry.</p>
-                    <p>You start the game as a complete nobody with nothing but your hopes and dreams. You can practice
-                        your music, play a few gigs, and begin to build a fanbase. Play your cards right and you'll soon
-                        be touring the world, cutting chart-topping records, and leaving a wake of tantalizing scandals
-                        behind you!</p>
-                    <div class="box signupBox signup_Random_1">
+                <h1 id="ctl00_cphLeftColumn_hdrWelcome">Welcome to Popmundo</h1>
+                <p>Popmundo is an online role-playing game and community where the players strive for fame in a
+                    virtual music industry.</p>
+                <p>You start the game as a complete nobody with nothing but your hopes and dreams. You can practice
+                    your music, play a few gigs, and begin to build a fanbase. Play your cards right and you'll soon
+                    be touring the world, cutting chart-topping records, and leaving a wake of tantalizing scandals
+                    behind you!</p>
+                <div class="box signupBox signup_Random_1">
 
-                        <div class="width49 float_right">
-                            <h3 class="signup">Register using Facebook</h3>
-                            <p>If you have a Facebook-account, you can use it to register and start playing immediately:
-                            </p>
-                            <p>
-                                <a id="ctl00_cphLeftColumn_ctl00_lnkFacebookSignup"
-                                    title="Allows you to sign up with Popmundo using your Facebook account."
-                                    class="fbButton"
-                                    href="https://www.facebook.com/v2.9/dialog/oauth?client_id=229620858652&amp;redirect_uri=https%3a%2f%2fwww.popmundo.com%2fAccount%2fPopmundo.aspx%2fSignUp%3faction%3dfacebooksignup&amp;scope=public_profile,email">Sign
-                                    up with Facebook</a>
-                            </p>
-                        </div>
+                    <div class="width49 float_right">
+                        <h3 class="signup">Register using Facebook</h3>
+                        <p>If you have a Facebook-account, you can use it to register and start playing immediately:
+                        </p>
+                        <p>
+                            <a id="ctl00_cphLeftColumn_ctl00_lnkFacebookSignup"
+                               title="Allows you to sign up with Popmundo using your Facebook account."
+                               class="fbButton"
+                               href="https://www.facebook.com/v2.9/dialog/oauth?client_id=229620858652&amp;redirect_uri=https%3a%2f%2fwww.popmundo.com%2fAccount%2fPopmundo.aspx%2fSignUp%3faction%3dfacebooksignup&amp;scope=public_profile,email">Sign
+                                up with Facebook</a>
+                        </p>
+                    </div>
 
 
-                        <div class="width49 float_left">
-                            <h3 class="signup">Register to join the fun!</h3>
-                            <p>If you prefer to register with us directly, fill out the fields below. We'll send you an
-                                e-mail with instructions on how to get started:</p>
-                            <p class="bmargin5">
-                                <strong>Login Name:</strong><br>
-                                <input name="ctl00$cphLeftColumn$ctl00$txtLN" type="text" maxlength="20"
-                                    id="ctl00_cphLeftColumn_ctl00_txtLN" class="round width90">
-                            </p>
-                            <p class="bmargin5">
-                                <strong>Email:</strong><br>
-                                <input name="ctl00$cphLeftColumn$ctl00$txtEM" type="text" maxlength="100"
-                                    id="ctl00_cphLeftColumn_ctl00_txtEM" class="round width90">
-                            </p>
-                            <p class="bmargin5">
-                                <strong>Repeat Email:</strong><br>
-                                <input name="ctl00$cphLeftColumn$ctl00$txtEM2" type="text" maxlength="100"
-                                    id="ctl00_cphLeftColumn_ctl00_txtEM2" class="round width90">
-                            </p>
-                            <p class="tmargin15">
-                                <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnSU" value="Register"
-                                    onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphLeftColumn$ctl00$btnSU&quot;, &quot;&quot;, true, &quot;EmailForm&quot;, &quot;&quot;, false, false))"
-                                    id="ctl00_cphLeftColumn_ctl00_btnSU" class="cnf">
-                                <script type="text/javascript">
-                                    function bindDialog_ctl00_cphLeftColumn_ctl00_btnSU() {
-                                        var d_ctl00_cphLeftColumn_ctl00_btnSU = createConfBox(
-                                            "ctl00_cphLeftColumn_ctl00_btnSU", "Please confirm",
-                                            "Are you sure you entered your email correctly? Without your correct email address we won\'t be able to send you the login details necessary to play the game.",
-                                            "Yes", "No", null, null);
-                                        jQuery("#ctl00_cphLeftColumn_ctl00_btnSU").click(function () {
-                                            d_ctl00_cphLeftColumn_ctl00_btnSU.dialog("open");
-                                            return false;
-                                        });
-                                    }
-                                    jQuery(document).ready(function () {
-                                        bindDialog_ctl00_cphLeftColumn_ctl00_btnSU();
+                    <div class="width49 float_left">
+                        <h3 class="signup">Register to join the fun!</h3>
+                        <p>If you prefer to register with us directly, fill out the fields below. We'll send you an
+                            e-mail with instructions on how to get started:</p>
+                        <p class="bmargin5">
+                            <strong>Login Name:</strong><br>
+                            <input name="ctl00$cphLeftColumn$ctl00$txtLN" type="text" maxlength="20"
+                                   id="ctl00_cphLeftColumn_ctl00_txtLN" class="round width90">
+                        </p>
+                        <p class="bmargin5">
+                            <strong>Email:</strong><br>
+                            <input name="ctl00$cphLeftColumn$ctl00$txtEM" type="text" maxlength="100"
+                                   id="ctl00_cphLeftColumn_ctl00_txtEM" class="round width90">
+                        </p>
+                        <p class="bmargin5">
+                            <strong>Repeat Email:</strong><br>
+                            <input name="ctl00$cphLeftColumn$ctl00$txtEM2" type="text" maxlength="100"
+                                   id="ctl00_cphLeftColumn_ctl00_txtEM2" class="round width90">
+                        </p>
+                        <p class="tmargin15">
+                            <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnSU" value="Register"
+                                   onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphLeftColumn$ctl00$btnSU&quot;, &quot;&quot;, true, &quot;EmailForm&quot;, &quot;&quot;, false, false))"
+                                   id="ctl00_cphLeftColumn_ctl00_btnSU" class="cnf">
+                            <script type="text/javascript">
+                                function bindDialog_ctl00_cphLeftColumn_ctl00_btnSU() {
+                                    var d_ctl00_cphLeftColumn_ctl00_btnSU = createConfBox(
+                                        "ctl00_cphLeftColumn_ctl00_btnSU", "Please confirm",
+                                        "Are you sure you entered your email correctly? Without your correct email address we won\'t be able to send you the login details necessary to play the game.",
+                                        "Yes", "No", null, null);
+                                    jQuery("#ctl00_cphLeftColumn_ctl00_btnSU").click(function () {
+                                        d_ctl00_cphLeftColumn_ctl00_btnSU.dialog("open");
+                                        return false;
                                     });
-                                </script>
-                            </p>
-                        </div>
+                                }
 
-
-
-
-
-
-
-                    </div>
-                    <p>The game is played in real time and the game keeps on going even when you're not logged in.
-                        Success in the game is determined by careful strategy and good timing, not by constant online
-                        presence. It's perfectly possible to be successful in the game by logging in a couple of times a
-                        week to check up on things.</p>
-                    <p>Popmundo is free of charge and no downloads are necessary to play it. If you can read this you're
-                        good to go.</p>
-                    <p>Don't like Facebook tracking your visits here? Bookmark <a
-                            href="https://www.popmundo.com/?nofb=1">this page</a> instead.</p>
-
-                    <div class="box newsList">
-                        <h2>Latest Community News</h2>
-                        <table class="data">
-
-                            <tbody>
-                                <tr class="odd">
-                                    <td class="forceround">
-
-                                        <p>
-                                            <strong>The Winners Of The Four Horsemen Of The Popmundo!</strong><br>
-
-                                            <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
-                                                class="servertime">4/24/2019
-                                        </p>
-                                        <p class="nobmargin">text
-                                            <a href="/World/Popmundo.aspx/Artist/2471015">Avalanche</a><br>2nd Level
-                                            winner: <a href="/World/Popmundo.aspx/Artist/2608039">Sonohra</a><br>3rd
-                                            Level winner: <a href="/World/Popmundo.aspx/Artist/2624856">Nacht der
-                                                Untoten</a><br>4th Level winner: <a
-                                                href="/World/Popmundo.aspx/Artist/2498366">Head
-                                                Traffic</a><br><br>Congratulations to all of you!</p>
-                                    </td>
-                                </tr>
-
-                                <tr class="even">
-                                    <td class="forceround">
-
-                                        <p>
-                                            <strong>This Week in Real Life #32<img
-                                                    id="ctl00_cphLeftColumn_ctl01_repNews_ctl02_imgSpecial"
-                                                    class="lmargin5 valignmid" src="Static/Images/Twirl.png"
-                                                    style="border-width:0px;"></strong><br>
-
-                                            <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
-                                                class="servertime">4/18/2019
-                                        </p>
-                                        <p>Spring is finally here and the Easter bunny is about to make its annual
-                                            appearance any day now. It's been a somewhat slow week with one dev off
-                                            doing crazy stuff on a snow covered mountain with a piece of wood strapped
-                                            to his feet. And as tradition has it: when the cat's away the mice will
-                                            play!</p>
-                                        <p class="right nobmargin"><a href="javascript:void(0);" class="enh-show-hide"
-                                                data-targ="#News_1750">Read more »</a></p>
-                                        <p id="News_1750" class="hidden nobmargin tmargin5">Despite the extra play time
-                                            we did manage to get some work done. For example it's no longer necessary
-                                            for band members to accept invitations to participate in their own music
-                                            videos, instead they'll be automatically added as participants when invited.
-                                            And the next time you get your weekly dose of experience points the diary
-                                            event will tell you how many points you have in total, and not only how many
-                                            points you got. We also deleted another 100 million rows of data which was
-                                            hard to reach.<br><br>Parties are still in beta. A huge thank you to
-                                            everyone who's been helping out by throwing soirees the last few weeks!
-                                            We're currently ironing out some elusive bugs, and adding layer upon layer
-                                            of debugging code to try to catch them. By next week we're hoping to start
-                                            adding new features, events and attractions instead.<br><br>Enjoy the rest
-                                            of the week people!</p>
-                                    </td>
-                                </tr>
-
-                                <tr class="odd">
-                                    <td class="forceround">
-
-                                        <p>
-                                            <strong>This Week in Real Life #31<img
-                                                    id="ctl00_cphLeftColumn_ctl01_repNews_ctl03_imgSpecial"
-                                                    class="lmargin5 valignmid" src="Static/Images/Twirl.png"
-                                                    style="border-width:0px;"></strong><br>
-
-                                            <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
-                                                class="servertime">4/11/2019
-                                        </p>
-                                        <p>This will be a short twirl. We've already given our translators enough work
-                                            for one week. But... in case anyone was wondering, winter came back to bite
-                                            us in the butt one last time.</p>
-                                        <p class="right nobmargin"><a href="javascript:void(0);" class="enh-show-hide"
-                                                data-targ="#News_1749">Read more »</a></p>
-                                        <p id="News_1749" class="hidden nobmargin tmargin5">It's been a busy week with
-                                            the public beta of the party system and the launch of skateboards,
-                                            hoverboards, and stormswingers. If you missed any of this please check out
-                                            the community news on this page for more information. The implementation of
-                                            the Stormswinger accidentally caused the toaster-obsessed robot on the moon
-                                            to malfunction for a while, but other than that, it has been pretty smooth
-                                            sailing so far. It's always a nice surprise when a new piece of code causes
-                                            a butterfly effect to knock out something seemingly unrelated elsewhere in
-                                            the game.<br><br>We also made it possible for artists to have band members
-                                            direct their own music videos this week. And we sent the database to the
-                                            shrink to get rid of two hundred million rows of repressed memories. That
-                                            was interesting. The database is still undergoing treatment to get rid of
-                                            some more traumatic data but we expect it to feel better real
-                                            soon.<br><br>Enjoy the rest of the week people!</p>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                        <p class="right tmargin10">
-                            <a id="ctl00_cphLeftColumn_ctl01_repNews_ctl04_lnkNews"></a>
+                                jQuery(document).ready(function () {
+                                    bindDialog_ctl00_cphLeftColumn_ctl00_btnSU();
+                                });
+                            </script>
                         </p>
                     </div>
-
 
 
                 </div>
-                <div id="ppm-sidemenu" role="navigation">
-                    <div class="box">
+                <p>The game is played in real time and the game keeps on going even when you're not logged in.
+                    Success in the game is determined by careful strategy and good timing, not by constant online
+                    presence. It's perfectly possible to be successful in the game by logging in a couple of times a
+                    week to check up on things.</p>
+                <p>Popmundo is free of charge and no downloads are necessary to play it. If you can read this you're
+                    good to go.</p>
+                <p>Don't like Facebook tracking your visits here? Bookmark <a
+                        href="https://www.popmundo.com/?nofb=1">this page</a> instead.</p>
 
-                        <h2>Log In</h2>
+                <div class="box newsList">
+                    <h2>Latest Community News</h2>
+                    <table class="data">
 
-                        <p>
-                            Username:<br>
-                            <script type="text/javascript">
-                                jQuery(document).ready(function () {
-                                    bindRetTrg("ctl00_cphRightColumn_ucLogin_txtUsername",
-                                        "ctl00_cphRightColumn_ucLogin_btnLogin");
-                                });
-                            </script><input name="ctl00$cphRightColumn$ucLogin$txtUsername" type="text" maxlength="20"
-                                id="ctl00_cphRightColumn_ucLogin_txtUsername" class="round width95">
-                        </p>
-                        <p>
-                            Password:<br>
-                            <script type="text/javascript">
-                                jQuery(document).ready(function () {
-                                    bindRetTrg("ctl00_cphRightColumn_ucLogin_txtPassword",
-                                        "ctl00_cphRightColumn_ucLogin_btnLogin");
-                                });
-                            </script><input name="ctl00$cphRightColumn$ucLogin$txtPassword" type="password"
-                                maxlength="20" id="ctl00_cphRightColumn_ucLogin_txtPassword" class="round width95">
-                        </p>
-                        <p>
-                            Status:<br>
-                            <select name="ctl00$cphRightColumn$ucLogin$ddlStatus"
+                        <tbody>
+                        <tr class="odd">
+                            <td class="forceround">
+
+                                <p>
+                                    <strong>The Winners Of The Four Horsemen Of The Popmundo!</strong><br>
+
+                                    <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
+                                         class="servertime">4/24/2019
+                                </p>
+                                <p class="nobmargin">text
+                                    <a href="/World/Popmundo.aspx/Artist/2471015">Avalanche</a><br>2nd Level
+                                    winner: <a href="/World/Popmundo.aspx/Artist/2608039">Sonohra</a><br>3rd
+                                    Level winner: <a href="/World/Popmundo.aspx/Artist/2624856">Nacht der
+                                        Untoten</a><br>4th Level winner: <a
+                                            href="/World/Popmundo.aspx/Artist/2498366">Head
+                                        Traffic</a><br><br>Congratulations to all of you!</p>
+                            </td>
+                        </tr>
+
+                        <tr class="even">
+                            <td class="forceround">
+
+                                <p>
+                                    <strong>This Week in Real Life #32<img
+                                            id="ctl00_cphLeftColumn_ctl01_repNews_ctl02_imgSpecial"
+                                            class="lmargin5 valignmid" src="Static/Images/Twirl.png"
+                                            style="border-width:0px;"></strong><br>
+
+                                    <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
+                                         class="servertime">4/18/2019
+                                </p>
+                                <p>Spring is finally here and the Easter bunny is about to make its annual
+                                    appearance any day now. It's been a somewhat slow week with one dev off
+                                    doing crazy stuff on a snow covered mountain with a piece of wood strapped
+                                    to his feet. And as tradition has it: when the cat's away the mice will
+                                    play!</p>
+                                <p class="right nobmargin"><a href="javascript:void(0);" class="enh-show-hide"
+                                                              data-targ="#News_1750">Read more »</a></p>
+                                <p id="News_1750" class="hidden nobmargin tmargin5">Despite the extra play time
+                                    we did manage to get some work done. For example it's no longer necessary
+                                    for band members to accept invitations to participate in their own music
+                                    videos, instead they'll be automatically added as participants when invited.
+                                    And the next time you get your weekly dose of experience points the diary
+                                    event will tell you how many points you have in total, and not only how many
+                                    points you got. We also deleted another 100 million rows of data which was
+                                    hard to reach.<br><br>Parties are still in beta. A huge thank you to
+                                    everyone who's been helping out by throwing soirees the last few weeks!
+                                    We're currently ironing out some elusive bugs, and adding layer upon layer
+                                    of debugging code to try to catch them. By next week we're hoping to start
+                                    adding new features, events and attractions instead.<br><br>Enjoy the rest
+                                    of the week people!</p>
+                            </td>
+                        </tr>
+
+                        <tr class="odd">
+                            <td class="forceround">
+
+                                <p>
+                                    <strong>This Week in Real Life #31<img
+                                            id="ctl00_cphLeftColumn_ctl01_repNews_ctl03_imgSpecial"
+                                            class="lmargin5 valignmid" src="Static/Images/Twirl.png"
+                                            style="border-width:0px;"></strong><br>
+
+                                    <img src="/Static/Icons/TinyClock.png" alt="Server time" title="Server time"
+                                         class="servertime">4/11/2019
+                                </p>
+                                <p>This will be a short twirl. We've already given our translators enough work
+                                    for one week. But... in case anyone was wondering, winter came back to bite
+                                    us in the butt one last time.</p>
+                                <p class="right nobmargin"><a href="javascript:void(0);" class="enh-show-hide"
+                                                              data-targ="#News_1749">Read more »</a></p>
+                                <p id="News_1749" class="hidden nobmargin tmargin5">It's been a busy week with
+                                    the public beta of the party system and the launch of skateboards,
+                                    hoverboards, and stormswingers. If you missed any of this please check out
+                                    the community news on this page for more information. The implementation of
+                                    the Stormswinger accidentally caused the toaster-obsessed robot on the moon
+                                    to malfunction for a while, but other than that, it has been pretty smooth
+                                    sailing so far. It's always a nice surprise when a new piece of code causes
+                                    a butterfly effect to knock out something seemingly unrelated elsewhere in
+                                    the game.<br><br>We also made it possible for artists to have band members
+                                    direct their own music videos this week. And we sent the database to the
+                                    shrink to get rid of two hundred million rows of repressed memories. That
+                                    was interesting. The database is still undergoing treatment to get rid of
+                                    some more traumatic data but we expect it to feel better real
+                                    soon.<br><br>Enjoy the rest of the week people!</p>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <p class="right tmargin10">
+                        <a id="ctl00_cphLeftColumn_ctl01_repNews_ctl04_lnkNews"></a>
+                    </p>
+                </div>
+
+
+            </div>
+            <div id="ppm-sidemenu" role="navigation">
+                <div class="box">
+
+                    <h2>Log In</h2>
+
+                    <p>
+                        Username:<br>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function () {
+                                bindRetTrg("ctl00_cphRightColumn_ucLogin_txtUsername",
+                                    "ctl00_cphRightColumn_ucLogin_btnLogin");
+                            });
+                        </script>
+                        <input name="ctl00$cphRightColumn$ucLogin$txtUsername" type="text" maxlength="20"
+                               id="ctl00_cphRightColumn_ucLogin_txtUsername" class="round width95">
+                    </p>
+                    <p>
+                        Password:<br>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function () {
+                                bindRetTrg("ctl00_cphRightColumn_ucLogin_txtPassword",
+                                    "ctl00_cphRightColumn_ucLogin_btnLogin");
+                            });
+                        </script>
+                        <input name="ctl00$cphRightColumn$ucLogin$txtPassword" type="password"
+                               maxlength="20" id="ctl00_cphRightColumn_ucLogin_txtPassword" class="round width95">
+                    </p>
+                    <p>
+                        Status:<br>
+                        <select name="ctl00$cphRightColumn$ucLogin$ddlStatus"
                                 id="ctl00_cphRightColumn_ucLogin_ddlStatus" class="round width95">
-                                <option selected="selected" value="0">Normal</option>
-                                <option value="1">Busy</option>
-                                <option value="2">Mobile</option>
-                                <option value="4">Away</option>
-                                <option value="3">Drunk</option>
+                            <option selected="selected" value="0">Normal</option>
+                            <option value="1">Busy</option>
+                            <option value="2">Mobile</option>
+                            <option value="4">Away</option>
+                            <option value="3">Drunk</option>
 
-                            </select>
-                        </p>
-                        <div class="box login-cookies"><img src="Static/Icons/cookie--exclamation.png"
-                                style="border-width:0px;">By logging in, you allow us to store cookies in your web
-                            browser. These tasty snacks are needed to keep you logged in.</div>
-                        <p id="ctl00_cphRightColumn_ucLogin_pButton" class="right tmargin10">
-                            <a id="ctl00_cphRightColumn_ucLogin_lnkLostPassword" class="float_left"
-                                href="/Account/Popmundo.aspx/ResetPassword">Forgot?</a>
-                            <input type="submit" name="ctl00$cphRightColumn$ucLogin$btnLogin" value="OK!"
-                                id="ctl00_cphRightColumn_ucLogin_btnLogin">
-                        </p>
-
-                        <p>Or, if you've connected your account with Facebook:</p><a
-                            id="ctl00_cphRightColumn_ucLogin_lnkFacebookLogin"
-                            title="Or, if you've connected your account with Facebook:" class="fbButton"
-                            href="https://www.facebook.com/v2.9/dialog/oauth?client_id=229620858652&amp;redirect_uri=https%3a%2f%2fwww.popmundo.com%2fDefault.aspx%3faction%3dfacebooklogin&amp;scope=public_profile,email">Login
-                            with Facebook</a>
+                        </select>
+                    </p>
+                    <div class="box login-cookies"><img src="Static/Icons/cookie--exclamation.png"
+                                                        style="border-width:0px;">By logging in, you allow us to store
+                        cookies in your web
+                        browser. These tasty snacks are needed to keep you logged in.
                     </div>
+                    <p id="ctl00_cphRightColumn_ucLogin_pButton" class="right tmargin10">
+                        <a id="ctl00_cphRightColumn_ucLogin_lnkLostPassword" class="float_left"
+                           href="/Account/Popmundo.aspx/ResetPassword">Forgot?</a>
+                        <input type="submit" name="ctl00$cphRightColumn$ucLogin$btnLogin" value="OK!"
+                               id="ctl00_cphRightColumn_ucLogin_btnLogin">
+                    </p>
 
-                    <div class="box">
-                        <h2>Check these numbers out</h2>
-                        <p>There are currently <strong>877</strong> players out of <strong>55569</strong> online.</p>
-                        <p><strong>10275</strong> people have rocked on stage the last 24 hours.</p>
-                        <p>Within the last hour, <strong>218</strong> people did the wild thing with groupies or loved
-                            ones.</p>
-                        <p>Popmundo has been online for <strong>5522</strong> days!</p>
-                    </div>
+                    <p>Or, if you've connected your account with Facebook:</p><a
+                        id="ctl00_cphRightColumn_ucLogin_lnkFacebookLogin"
+                        title="Or, if you've connected your account with Facebook:" class="fbButton"
+                        href="https://www.facebook.com/v2.9/dialog/oauth?client_id=229620858652&amp;redirect_uri=https%3a%2f%2fwww.popmundo.com%2fDefault.aspx%3faction%3dfacebooklogin&amp;scope=public_profile,email">Login
+                    with Facebook</a>
+                </div>
 
-                    <div id="ctl00_cphRightColumn_divFB" class="box facebookBadge">
-                        <iframe
+                <div class="box">
+                    <h2>Check these numbers out</h2>
+                    <p>There are currently <strong>877</strong> players out of <strong>55569</strong> online.</p>
+                    <p><strong>10275</strong> people have rocked on stage the last 24 hours.</p>
+                    <p>Within the last hour, <strong>218</strong> people did the wild thing with groupies or loved
+                        ones.</p>
+                    <p>Popmundo has been online for <strong>5522</strong> days!</p>
+                </div>
+
+                <div id="ctl00_cphRightColumn_divFB" class="box facebookBadge">
+                    <iframe
                             src="https://www.facebook.com/plugins/likebox.php?id=119830401394611&amp;width=250&amp;connections=0&amp;stream=false&amp;header=false&amp;height=80"
                             id="ctl00_cphRightColumn_ifrFB" scrolling="no" frameborder="0"
                             style="border:none; overflow: hidden; width: 220px; height:70px;"
                             allowtransparency="true"></iframe>
-                    </div>
                 </div>
             </div>
         </div>
-    </form>
-
-    <div>
-        <div class="gr_-editor gr-iframe-first-load" style="display: none;">
-            <div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content"></iframe>
-        </div>
     </div>
-    <grammarly-card>
-        <div></div>
-    </grammarly-card><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i
-            class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span>
+</form>
+
+<div>
+    <div class="gr_-editor gr-iframe-first-load" style="display: none;">
+        <div class="gr_-editor_back"></div>
+        <iframe class="gr_-ifr gr-_dialog-content"></iframe>
+    </div>
+</div>
+<grammarly-card>
+    <div></div>
+</grammarly-card>
+<span class="gr__tooltip"><span class="gr__tooltip-content"></span><i
+        class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span>
 
 </body>
 
