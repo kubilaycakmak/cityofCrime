@@ -25,7 +25,7 @@ public class MyController {
 
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = {"/register", "/"}, method = RequestMethod.POST)
     public String getRegister(HttpServletRequest request) {
         String username = request.getParameter("username");
         String firstName = request.getParameter("firstName");
@@ -65,7 +65,7 @@ public class MyController {
 
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = {"/register", "/"}, method = RequestMethod.GET)
     public String callRegister(){
         return "register";
     }
