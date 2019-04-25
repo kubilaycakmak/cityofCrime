@@ -52,11 +52,15 @@ public class MyController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String getLogin(HttpServletRequest request) {
+    public String getLogin(HttpServletRequest request, HttpSession session) {
+        String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-        if (query.login(email, password)) {
+        query = Query.getQuery();
+        if (query.login(email, password, username) || query.login(username, password, email)) {
+            session.setAttribute("password",password);
+            session.setAttribute("email",email);
+            session.setAttribute("username",username);
             return "index";
         } else {
             return "warning";

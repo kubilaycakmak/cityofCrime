@@ -1,9 +1,6 @@
 package com.cityofCrime.cityofCrime.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -17,9 +14,9 @@ public class User {
     private String email;
     private String password;
 
-    private int phone;
-    private int age;
-    private int imageNumber; //1-10 image number, user will select a number to decide profile photo
+//    @OneToOne(cascade = CascadeType.ALL)
+//    private Character character;
+
 
     public User() {
     }
@@ -30,17 +27,6 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-    }
-
-    public User(String username, String firstName, String lastName, String email, String password, int phone, int age, int imageNumber) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.age = age;
-        this.imageNumber = imageNumber;
     }
 
     public int getId() {

@@ -3,7 +3,7 @@ package com.cityofCrime.cityofCrime.models;
 import javax.persistence.Entity;
 
 @Entity
-public class Character {
+public class Character extends User{
 
     private int type; //selection which person
     private int money;
@@ -15,16 +15,17 @@ public class Character {
     private int tolerance;
     private int charisma;
     private int power;
-    private int chance;
-    private int spirit;
+//    private int chance;
+//    private int spirit;
     private String equipments;
 
     private int credit;
 
+
     public Character() {
     }
 
-    public Character(int type, int money, int experience, int stamina, int respect, int intelligence, int strengh, int tolerance, int charisma, int power, int chance, int spirit, String equipments, int credit) {
+    public Character(int type, int money, int experience, int stamina, int respect, int intelligence, int strengh, int tolerance, int charisma, int power, String equipments, int credit) {
         this.type = type;
         this.money = money;
         this.experience = experience;
@@ -35,8 +36,6 @@ public class Character {
         this.tolerance = tolerance;
         this.charisma = charisma;
         this.power = power;
-        this.chance = chance;
-        this.spirit = spirit;
         this.equipments = equipments;
         this.credit = credit;
     }
@@ -138,21 +137,21 @@ public class Character {
         this.power = power;
     }
 
-    public int getChance() {
-        return chance;
-    }
-
-    public void setChance(int chance) {
-        this.chance = chance;
-    }
-
-    public int getSpirit() {
-        return spirit;
-    }
-
-    public void setSpirit(int spirit) {
-        this.spirit = spirit;
-    }
+//    public int getChance() {
+//        return chance;
+//    }
+//
+//    public void setChance(int chance) {
+//        this.chance = chance;
+//    }
+//
+//    public int getSpirit() {
+//        return spirit;
+//    }
+//
+//    public void setSpirit(int spirit) {
+//        this.spirit = spirit;
+//    }
 
     public String getEquipments() {
         return equipments;

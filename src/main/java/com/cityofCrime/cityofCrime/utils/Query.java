@@ -32,17 +32,18 @@ public class Query{
         }
         return check;
     }
-    public boolean login(String email,String password) {
+    public boolean login(String email,String password, String username) {
         boolean check = false;
         session = HibernateUtil.getSessionFactory().openSession();
         List<User> users = session.createQuery("from User",User.class).list();
         for(User user : users) {
-            if(user.getEmail().equals(email) && user.getPassword().equals(password))
+            if(user.getEmail().equals(email) && user.getPassword().equals(password) || user.getUsername().equals(username) && user.getPassword().equals(password))
                 check = true;
         }
 
         return  check;
     }
+
     public static Query getQuery() {
         if(query == null)
             query = new Query();
