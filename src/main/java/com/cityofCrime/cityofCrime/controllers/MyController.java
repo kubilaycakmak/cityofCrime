@@ -24,7 +24,6 @@ public class MyController {
     }
 
 
-
     @RequestMapping(value = {"/register", "/"}, method = RequestMethod.POST)
     public String getRegister(HttpServletRequest request) {
         String username = request.getParameter("username");
@@ -34,11 +33,11 @@ public class MyController {
         String password = request.getParameter("password");
         session = request.getSession();
         query = Query.getQuery();
-        if(query.register(username, firstName, lastName, email, password))
-            return "login";
+        if (query.register(username, firstName, lastName, email, password))
+            return "register";
         else {
             session.setAttribute("warning", "Email or nickname already exists.");
-            return "login";
+            return "register";
         }
     }
 
@@ -49,24 +48,24 @@ public class MyController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String callLogin() {
-        return "login";
+        return "register";
     }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String getLogin(HttpServletRequest request){
+    public String getLogin(HttpServletRequest request) {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (query.login(email, password)){
+        if (query.login(email, password)) {
             return "index";
-        }
-        else{
+        } else {
             return "warning";
         }
 
     }
 
     @RequestMapping(value = {"/register", "/"}, method = RequestMethod.GET)
-    public String callRegister(){
+    public String callRegister() {
         return "register";
     }
 
