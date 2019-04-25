@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
+@EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
@@ -13,12 +14,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler(
                 "/webjars/**",
                 "/img/**",
-                "../static/css/**",
+                "/static/css/**",
                 "/js/**")
                 .addResourceLocations(
                         "classpath:/META-INF/resources/webjars/",
                         "classpath:/static/img/",
-                        "classpath:../static/css/",
+                        "classpath:/static/css/",
                         "classpath:/static/js/");
     }
 

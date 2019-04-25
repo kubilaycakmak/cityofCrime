@@ -1,23 +1,73 @@
 package com.cityofCrime.cityofCrime.controllers;
 
+import com.cityofCrime.cityofCrime.models.User;
+import com.cityofCrime.cityofCrime.utils.Query;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class MyController {
 
+    User user;
+    Query query;
+    HttpSession session;
+
     @RequestMapping("/*")
-    public String get404(){
+    public String get404() {
         return "404";
     }
 
-    @RequestMapping("/register")
-    public String getRegister(){
-        return "register";
+
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String getRegister(HttpServletRequest request) {
+        String username = request.getParameter("username");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        session = request.getSession();
+        query = Query.getQuery();
+        if(query.register(username, firstName, lastName, email, password))
+            return "login";
+        else {
+            session.setAttribute("warning", "Email or nickname already exists.");
+            return "login";
+        }
     }
 
     @RequestMapping("/home")
-    public String getHome(){
+    public String getHome() {
         return "index";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String callLogin() {
+        return "login";
+    }
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String getLogin(HttpServletRequest request){
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        if (query.login(email, password)){
+            return "index";
+        }
+        else{
+            return "warning";
+        }
+
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String callRegister(){
+        return "register";
+    }
+
 }

@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login - Warning</title>
 </head>
 <body>
 
-<form action="/register" method="post">
-    <input type="text" name="username" placeholder="username" required>
-    <input type="text" name="firstName" placeholder="First Name" required>
-    <input type="text" name="lastName" placeholder="Last Name" required>
+<form action="/login" method="post">
     <input type="text" name="email" placeholder="Email" required>
     <input type="text" name="password" placeholder="Password" required>
+
+    <br>
+    <div>
+        <h2>Warning! Wrong Email or Password!</h2>
+    </div>
     <input type="submit" placeholder="submit" value="Submit">
 </form>
 </body>
