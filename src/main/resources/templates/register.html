@@ -1,110 +1,91 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
-    <title>City of Crime - Joni-Petteri Ukonmäki</title>
+    <title>City of Crime</title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
 </head>
-
 <body data-gr-c-s-loaded="true" style="">
-<div id="header" role="banner">
-    <div id="headbar" class="cityofcrime" style="display: block;"></div>
-</div>
-<div id="ppm-wrapper">
-    <div id="header-logo" style="background-color: bisque">
-        <h2 style="font-size: 72pt">City Of Crime</h2>
+    <div id="header" role="banner">
+        <div id="headbar" class="cityofcrime" style="display: block;"></div>
     </div>
-    <div id="ppm-main">
-        <div id="topcolumn">
-            <div class="StartImage gameimage"></div>
+    <div id="ppm-wrapper">
+        <div id="header-logo" style="background-color: bisque">
+            <h2 style="font-size: 72pt">City Of Crime</h2>
         </div>
-        <div id="ppm-content" role="main" class="content">
+        <div id="ppm-main">
+            <div id="topcolumn">
+                <div class="StartImage gameimage"></div>
+            </div>
+            <div id="ppm-content" role="main" class="content">
+                <h1 id="welcome">Welcome to City of Crime</h1>
+                <p>City of Crime is an online role-playing game and community where the players strive for fame in a
+                    virtual mob industry.</p>
+                <p>You start the game as a complete nobody with nothing but your hopes and dreams. You can raid gangs,
+                    sell a few gigs, and begin to build a mafia. Play your cards right and you'll soon
+                    be conquering the world, cutting chart-topping records, and leaving a wake of tantalizing scandals
+                    behind you!</p>
 
-            <h1 id="welcome">Welcome to City of Crime</h1>
-            <p>City of Crime is an online role-playing game and community where the players strive for fame in a
-                virtual music industry.</p>
-            <p>You start the game as a complete nobody with nothing but your hopes and dreams. You can raid gangs,
-                sell a few gigs, and begin to build a mafia. Play your cards right and you'll soon
-                be conquering the world, cutting chart-topping records, and leaving a wake of tantalizing scandals
-                behind you!</p>
-
-            <div>
-                <form action="/register" method="post">
-                    <div class="width49 float_left">
-                        <h3 class="signup">Register to join the fun!</h3>
-                        <p>If you prefer to register with us directly, fill out the fields below. We'll send you an
-                            e-mail with instructions on how to get started:</p>
-                        <p>
-                            <strong>User Name:</strong><br>
-                            <input name="username" type="text" maxlength="20" class="round width90">
-                        </p>
-                        <p>
-                            <strong>First Name:</strong><br>
-                            <input name="firstName" type="text" maxlength="20" class="round width90">
-                        </p>
-                        <p>
-                            <strong>Last Name:</strong><br>
-                            <input name="lastName" type="text" maxlength="100" class="round width90">
-                        </p>
+                <div>
+                    <form action="/register" method="post">
+                        <div class="width49 float_left">
+                            <h3 class="signup">Register to join the war!</h3>
+                            <p>
+                                <strong>User Name:</strong><br>
+                                <input name="username" type="text" maxlength="20" class="round width90">
+                            </p>
+                            <p>
+                                <strong>First Name:</strong><br>
+                                <input name="firstName" type="text" maxlength="20" class="round width90">
+                            </p>
+                            <p>
+                                <strong>Last Name:</strong><br>
+                                <input name="lastName" type="text" maxlength="100" class="round width90">
+                            </p>
+                            <p>
+                                <strong>Email:</strong><br>
+                                <input name="email" type="text" maxlength="100" class="round width90">
+                            </p>
+                            <p>
+                                <strong>Password:</strong><br>
+                                <input name="password" type="text" maxlength="20" class="round width90">
+                            </p>
+                            <p>
+                                <input type="submit" value="Register" class="cnf">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <p>The game is played in real time and the game keeps on going even when you're not logged in.
+                    Success in the game is determined by careful strategy and good timing, not by constant online
+                    presence. It's perfectly possible to be successful in the game by logging in a couple of times a
+                    week to check up on things.</p>
+                <p>City of Crime is free of charge and no downloads are necessary to play it. If you can read this
+                    you're
+                    good to go.</p>
+            </div>
+            <div role="navigation">
+                <div class="box">
+                    <form action="/login" method="post">
+                        <h2>Log In</h2>
                         <p>
                             <strong>Email:</strong><br>
                             <input name="email" type="text" maxlength="100" class="round width90">
                         </p>
                         <p>
                             <strong>Password:</strong><br>
-                            <input name="password" type="text" maxlength="20" class="round width90">
+                            <input name="password" type="text" maxlength="100" class="round width90">
                         </p>
                         <p>
-                            <input type="submit" value="Register" class="cnf">
+                            <input type="submit" name="loginSubmit" value="Login" onclick="" id="loginSubmit"
+                                class="cnf">
                         </p>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-            <p>The game is played in real time and the game keeps on going even when you're not logged in.
-                Success in the game is determined by careful strategy and good timing, not by constant online
-                presence. It's perfectly possible to be successful in the game by logging in a couple of times a
-                week to check up on things.</p>
-            <p>City of Crime is free of charge and no downloads are necessary to play it. If you can read this you're
-                good to go.</p>
         </div>
-        <div role="navigation">
-            <div class="box">
-                <form action="/login" method="post">
-                    <h2>Log In</h2>
-                    <p>
-                        <strong>Email:</strong><br>
-                        <input name="email" type="text" maxlength="100" class="round width90">
-                    </p>
-                    <p>
-                        <strong>Password:</strong><br>
-                        <input name="password" type="text" maxlength="100" class="round width90">
-                    </p>
-                    <p>
-                        <input type="submit" name="loginSubmit" value="Login"
-                               onclick=""
-                               id="loginSubmit" class="cnf">
-                    </p>
-
-                </form>
-            </div>
-
-
-        </div>
-        <p>The game is played in real time and the game keeps on going even when you're not logged in.
-            Success in the game is determined by careful strategy and good timing, not by constant online
-            presence. It's perfectly possible to be successful in the game by logging in a couple of times a
-            week to check up on things.</p>
-        <p>Popmundo is free of charge and no downloads are necessary to play it. If you can read this you're
-            good to go.</p>
-        <p>Don't like Facebook tracking your visits here? Bookmark <a
-                href="https://www.popmundo.com/?nofb=1">this page</a> instead.</p>
-
     </div>
-</div>
-</div>
-
 </body>
 
 </html>
