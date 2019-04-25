@@ -1,5 +1,9 @@
 body {
-    background: #151213 url(/static/assets/images/city_background.jpg) repeat-x;
+    background: url("https://i.ibb.co/kyTxyDY/asdadada.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: top !important;
+    background-color: black !important;
+
 }
 
 div#topcolumn {
@@ -160,7 +164,7 @@ div#top-menu {
     height: 32px;
     margin-top: 15%;
     box-shadow: inset 0px 0px 10px rgba(255, 225, 154, 0.5);
-    background-color: bisque;
+    background-color: grey;
     z-index: 9999;
 }
 
