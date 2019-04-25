@@ -1,5 +1,22 @@
 body {
-    background: #63767f url("static/assets/images/city_background.jpg") repeat-x;
+    background: #63767f url("/static/assets/images/city_background.jpg") repeat-x;
+}
+
+div#topcolumn {
+    margin: 0 25px;
+}
+
+div.StartImage {
+    background: url("https://www.popmundo.com/Static/Images/Front/Megadome.jpg") no-repeat;
+    height: 300px;
+    max-width: 725px;
+}
+
+div#header img.logo,
+div.gameimage,
+div#headermenu,
+div.forumMessageHeader {
+    margin-bottom: 15px;
 }
 
 form {
@@ -11,14 +28,18 @@ div#header-logo img {
     margin: -15px 0 0 222px;
 }
 
-div#header, div.box h2, div.box div.tabs, div#top-menu-notifications-list h2 {
+div#header,
+div.box h2,
+div.box div.tabs,
+div#top-menu-notifications-list h2 {
     border-radius: 7px 7px 0 0;
     -moz-border-radius: 7px 7px 0 0;
     -webkit-border-radius: 7px 7px 0 0;
     color: white;
 }
 
-h3, strong {
+h3,
+strong {
     color: white;
 }
 
@@ -40,7 +61,8 @@ a {
     text-decoration: none;
 }
 
-div.avatar, div.avatar_clean {
+div.avatar,
+div.avatar_clean {
     background-size: 100% !important;
 }
 
@@ -49,7 +71,8 @@ div.avatar {
     margin-right: 10px;
 }
 
-div.avatar, div.avatar_clean {
+div.avatar,
+div.avatar_clean {
     height: 156px;
     width: 114px;
 }
@@ -89,7 +112,10 @@ a:-webkit-any-link {
     text-decoration: underline;
 }
 
-html, input, select, textarea {
+html,
+input,
+select,
+textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
 }
@@ -117,7 +143,10 @@ div {
     display: block;
 }
 
-html, input, select, textarea {
+html,
+input,
+select,
+textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
 }
@@ -148,7 +177,9 @@ div#top-menu-nav ul {
     text-align: center;
 }
 
-ul, menu, dir {
+ul,
+menu,
+dir {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -184,7 +215,9 @@ div#ppm-content {
     width: 489px;
 }
 
-div.box, table.data tr.even td, div.editor a.button:hover {
+div.box,
+table.data tr.even td,
+div.editor a.button:hover {
     background: #eee;
 }
 
@@ -220,7 +253,9 @@ div.charMainInfo {
     clear: both;
 }
 
-div.box, table.data tr.even td, div.editor a.button:hover {
+div.box,
+table.data tr.even td,
+div.editor a.button:hover {
     background: rgba(255, 230, 172, 0.61);
 }
 
