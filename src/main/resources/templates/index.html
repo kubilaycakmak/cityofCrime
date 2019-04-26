@@ -215,20 +215,26 @@
                 </div>
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
-                        <h2 id="ctl00_cphRightColumn_ctl00_hdrMain">Karakter</h2>
-                        <div class="menu">
-                            <ul>
-                                <li><a href="">Genel Bilgiler</a></li>
-                                <li><a href="">Başarılar</a></li>
-                                <li id="mnuToolTipDiary"><a href="">Günlük</a></li>
-
-                                <li><a href="">Geçmiş ve Diğer Bilgiler</a></li>
-                                <li><a href="">Aile</a></li>
-                                <li><a href="">İlişkiler</a></li>
-                                <li><a href="">Beden ve Sağlık</a></li>
-                                <li><a href="">Oyuncu Bilgileri</a></li>
-                            </ul>
-                        </div>
+                        <h2 id="ctl00_cphRightColumn_ctl00_hdrMain">Character</h2>
+                        <strong>Stamina: <span th:text="${session.user.userCharacter.stamina}"></span></strong>
+                        <br>
+                        <strong>Respect:<span th:text="${session.user.userCharacter.respect}"></span></strong>
+                        <br>
+                        <strong>Money:<span th:text="${session.user.userCharacter.money}"></span></strong>
+                        <br>
+                        <strong>Experience:<span th:text="${session.user.userCharacter.experience}"></span></strong>
+                        <br>
+                        <strong>Intelligence:<span th:text="${session.user.userCharacter.intelligence}"></span></strong>
+                        <br>
+                        <strong>Strength:<span th:text="${session.user.userCharacter.strength}"></span></strong>
+                        <br>
+                        <strong>Tolerance:<span th:text="${session.user.userCharacter.tolerance}"></span></strong>
+                        <br>
+                        <strong>Charisma:<span th:text="${session.user.userCharacter.charisma}"></span></strong>
+                        <br>
+                        <strong>Power:<span th:text="${session.user.userCharacter.power}"></span></strong>
+                        <br>
+                        <strong>Credit:<span th:text="${session.user.userCharacter.credit}"></span></strong>
                         <div class="menu">
                             <h3 class="menu">
                                 Kariyer ve Aktivite
