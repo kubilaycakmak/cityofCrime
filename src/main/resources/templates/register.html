@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body data-gr-c-s-loaded="true" style="">
     <div id="header" role="banner">
@@ -52,6 +53,14 @@
                             <p>
                                 <strong>Password:</strong><br>
                                 <input name="password" type="text" maxlength="20" class="round width90">
+                            </p>
+                            <p>
+                                <strong>Style:</strong>
+                                <select name="type" class="selectpicker">
+                                    <option data-icon="fa-heart" value="1">Gangster</option>
+                                    <option data-icon="fa-heart" value="2">Assassin</option>
+                                    <option data-icon="fa-heart" value="3">Dealer</option>
+                                </select>
                             </p>
                             <p>
                                 <input type="submit" value="Register" class="cnf btn btn-dark">

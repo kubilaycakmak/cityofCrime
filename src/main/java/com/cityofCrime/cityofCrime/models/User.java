@@ -2,31 +2,45 @@ package com.cityofCrime.cityofCrime.models;
 
 import javax.persistence.*;
 
+
 @Entity
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+    int id;
+    String username;
+    String firstName;
+    String lastName;
+    String email;
+    String password;
+
+    @OneToOne
+    UserCharacter userCharacter;
+
 
 //    @OneToOne(cascade = CascadeType.ALL)
-//    private Character character;
+//    private UserCharacter userCharacter;
 
 
     public User() {
     }
 
-    public User(String username, String firstName, String lastName, String email, String password) {
+    public User(String username, String firstName, String lastName, String email, String password, UserCharacter userCharacter) {
+        this.userCharacter = userCharacter;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+    }
+
+    public UserCharacter getUserCharacter() {
+        return userCharacter;
+    }
+
+    public void setUserCharacter(UserCharacter userCharacter) {
+        this.userCharacter = userCharacter;
     }
 
     public int getId() {

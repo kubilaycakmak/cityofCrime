@@ -4,6 +4,7 @@ import com.cityofCrime.cityofCrime.models.User;
 import com.cityofCrime.cityofCrime.utils.Query;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -31,9 +32,10 @@ public class MyController {
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        int type = Integer.parseInt(request.getParameter("type"));
         session = request.getSession();
         query = Query.getQuery();
-        if (query.register(username, firstName, lastName, email, password))
+        if (query.register(username, firstName, lastName, email, password,type))
             return "register";
         else {
             session.setAttribute("warning", "Email or nickname already exists.");
@@ -42,7 +44,9 @@ public class MyController {
     }
 
     @RequestMapping("/home")
-    public String getHome() {
+    public String getHome(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
         return "index";
     }
 
@@ -52,20 +56,22 @@ public class MyController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String getLogin(HttpServletRequest request, HttpSession session) {
-        String username = request.getParameter("username");
+    public String getLogin(HttpServletRequest request, Model model) {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         query = Query.getQuery();
-        if (query.login(email, password, username) || query.login(username, password, email)) {
-            session.setAttribute("password",password);
+        if (query.login(email,password)) {
+            session = request.getSession();
             session.setAttribute("email",email);
-            session.setAttribute("username",username);
+            session.setAttribute("user",query.getUser(email));
             return "index";
         } else {
             return "warning";
         }
-
+    }
+    @RequestMapping("/user")
+    public String getUser(){
+        return "user";
     }
 
     @RequestMapping(value = {"/register", "/"}, method = RequestMethod.GET)

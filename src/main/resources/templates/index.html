@@ -19,7 +19,7 @@
                             <div title="achv1" class="Achievement Achievement_196"></div>
                             <div title="achv2" class="Achievement Achievement_254"></div>
                         </div>
-                        <h2 th:text="${#session.getAttribute('email')}">Joni-Petteri</h2>
+                        <h2 th:text="${session.user.firstName +' '+ session.user.lastName}">Joni-Petteri</h2>
                         <div class="avatar pointer idTrigger"
                             style="background: url('https://shmector.com/_ph/4/275274558.png') no-repeat;"
                             onclick="window.location.href='';">
@@ -27,11 +27,23 @@
                         </div>
                         <div class="float_left characterPresentation">
                             <p>
-                                asd 38 yaşında.
-                                Joni-Petteri, <a href="">Helsinki</a> şehrinde, <a
+                            <strong th:text="${session.user.username}"></strong> bir
+                                <strong>
+                                    <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
+                                    <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
+                                    <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
+                                </strong>
+                                ve
+                                <a href="">Helsinki</a> şehrinde, <a
                                     href="">Hietaniemen hautausmaa</a> adlı mekânda.
                             </p>
-                            <p>Joni-Petteri boş zamanlarında <strong>dinlenmek</strong> ile uğraşmayı seviyor ve
+                            <p><strong th:text="${session.user.username}"></strong> boş zamanlarında
+                                <strong>
+                                    <span th:if="${session.user.userCharacter.type == 1}">Sokak toplantıları</span>
+                                    <span th:if="${session.user.userCharacter.type == 2}">Hedefler</span>
+                                    <span th:if="${session.user.userCharacter.type == 3}">Ticaret</span>
+                                </strong>
+                                ile uğraşmayı seviyor ve
                                 profesyonel olarak kendisini geliştirebilmek için <strong>yetenek geliştirmek</strong>
                                 ile uğraşıyor.</p>
 

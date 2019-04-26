@@ -1,38 +1,46 @@
 package com.cityofCrime.cityofCrime.models;
 
-import javax.persistence.Entity;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Character extends User{
+public class UserCharacter {
 
-    private int type; //selection which person
-    private int money;
-    private int experience;
-    private int stamina;
-    private int respect;
-    private int intelligence;
-    private int strengh;
-    private int tolerance;
-    private int charisma;
-    private int power;
-//    private int chance;
-//    private int spirit;
-    private String equipments;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
 
-    private int credit;
+    int type; //selection which person
+    int money;
+    int experience;
+    int stamina;
+    int respect;
+    int intelligence;
+    int strength;
+    int tolerance;
+    int charisma;
+    int power;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    List<Equipments> equipments;
 
-    public Character() {
+    int credit;
+
+    public UserCharacter() {
+        super();
     }
 
-    public Character(int type, int money, int experience, int stamina, int respect, int intelligence, int strengh, int tolerance, int charisma, int power, String equipments, int credit) {
+    public UserCharacter(int type, int money, int experience, int stamina, int respect, int intelligence, int strength, int tolerance, int charisma, int power, List<Equipments> equipments, int credit) {
         this.type = type;
         this.money = money;
         this.experience = experience;
         this.stamina = stamina;
         this.respect = respect;
         this.intelligence = intelligence;
-        this.strengh = strengh;
+        this.strength = strength;
         this.tolerance = tolerance;
         this.charisma = charisma;
         this.power = power;
@@ -40,21 +48,13 @@ public class Character extends User{
         this.credit = credit;
     }
 
-    public Character(int intelligence, int strengh, int tolerance, int charisma) {
-        this.intelligence = intelligence;
-        this.strengh = strengh;
-        this.tolerance = tolerance;
-        this.charisma = charisma;
+
+    public int getId() {
+        return id;
     }
 
-    public Character(int credit) {
-        this.credit = credit;
-    }
-
-    public Character(int money, int experience, int respect) {
-        this.money = money;
-        this.experience = experience;
-        this.respect = respect;
+    public int getStrength() {
+        return strength;
     }
 
     public int getType() {
@@ -105,14 +105,6 @@ public class Character extends User{
         this.intelligence = intelligence;
     }
 
-    public int getStrengh() {
-        return strengh;
-    }
-
-    public void setStrengh(int strengh) {
-        this.strengh = strengh;
-    }
-
     public int getTolerance() {
         return tolerance;
     }
@@ -137,27 +129,11 @@ public class Character extends User{
         this.power = power;
     }
 
-//    public int getChance() {
-//        return chance;
-//    }
-//
-//    public void setChance(int chance) {
-//        this.chance = chance;
-//    }
-//
-//    public int getSpirit() {
-//        return spirit;
-//    }
-//
-//    public void setSpirit(int spirit) {
-//        this.spirit = spirit;
-//    }
-
-    public String getEquipments() {
+    public List<Equipments> getEquipments() {
         return equipments;
     }
 
-    public void setEquipments(String equipments) {
+    public void setEquipments(List<Equipments> equipments) {
         this.equipments = equipments;
     }
 
