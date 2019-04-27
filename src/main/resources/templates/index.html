@@ -4,8 +4,12 @@
     <title>City of Crime - Karakter Adı</title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
 </head>
+
 <body data-gr-c-s-loaded="true" style="">
     <form name="javaForm" method="post" action="./Character" id="javaForm">
         <div id="header" role="banner">
@@ -27,15 +31,14 @@
                         </div>
                         <div class="float_left characterPresentation">
                             <p>
-                            <strong th:text="${session.user.username}"></strong> bir
+                                <strong th:text="${session.user.username}"></strong> bir
                                 <strong>
                                     <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
                                     <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
                                     <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
                                 </strong>
                                 ve
-                                <a href="">Helsinki</a> şehrinde, <a
-                                    href="">Hietaniemen hautausmaa</a> adlı mekânda.
+                                <a href="">Helsinki</a> şehrinde, <a href="">Hietaniemen hautausmaa</a> adlı mekânda.
                             </p>
                             <p><strong th:text="${session.user.username}"></strong> boş zamanlarında
                                 <strong>
@@ -49,19 +52,31 @@
 
                             <div class="tb nobmargin" id="ctl00_cphLeftColumn_ctl02_tbxStatement">
                                 <div class="tbc tbcw">
-                                    <a id="ctl00_cphLeftColumn_ctl02_lnkEditStatement"
-                                        title="Konuşma baloncuğunu düzenle" class="float_right"
-                                        href=""><img
-                                            title="Konuşma baloncuğunu düzenle"
-                                            src="" alt=""
-                                            style="border-width:0px;"></a><span class="em">Sanırım havalı bir şeyler
-                                        söylemem gerekiyor...</span>
+                                    <span class="em">Sanırım havalı bir şeyler söylemem gerekiyor...</span>
                                 </div>
-                                <div class="tbfbll">
-                                    <div class="tbbll tbslw">
-                                        <p></p>
-                                    </div>
-                                </div>
+                            </div>
+                            <div id="stats">
+                                <table class="width100">
+                                    <tbody>
+                                        <tr>
+                                            <td>Stamina:<img src="../static/assets/images/b1.gif" alt=""><img src="../static/assets/images/b1.gif" alt="" height="12" width="250"><img src="../static/assets/images/b1.gif" alt="" height="12" width="0"><img src="../static/assets/images/b1.gif" alt=""></td>                                            <td>Respect:<a id="respect">100</a></td>
+                                            <td>Money:<a id="money">100</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Experience:<a id="experience">100</a></td>
+                                            <td>Charisma:<a id="charisma">100</a></td>
+                                            <td>Strength:<a id="strength">100</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Intelligence:<a id="intelligence">100</a></td>
+                                            <td>Tolerance:<a id="tolerance">100</a></td>
+                                            <td>Power:<a id="power">100</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Credit:<a id="credit">100</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -70,8 +85,8 @@
                             <tbody>
                                 <tr id="ctl00_cphLeftColumn_ctl00_trAttitude">
                                     <td class="middle" style="width: 13px;"></td>
-                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkAttitude" title="Tavır"
-                                            href="">Agresif</a></td>
+                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkAttitude" title="Tavır" href="">Agresif</a>
+                                    </td>
                                 </tr>
 
                                 <tr>
@@ -80,19 +95,16 @@
                                 </tr>
                                 <tr id="ctl00_cphLeftColumn_ctl00_trToolLink1">
                                     <td class="middle" style="width: 13px;"></td>
-                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink1"
-                                            href="">Geliştir</a>
+                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink1" href="">Geliştir</a>
                                     </td>
                                 </tr>
                                 <tr id="ctl00_cphLeftColumn_ctl00_trToolLink2">
                                     <td class="middle" style="width: 13px;"></td>
-                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink2"
-                                            href="">Odaklar</a></td>
+                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink2" href="">Odaklar</a></td>
                                 </tr>
                                 <tr id="ctl00_cphLeftColumn_ctl00_trToolLink3">
                                     <td class="middle" style="width: 13px;"></td>
-                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink3"
-                                            href="">Ayarlar</a></td>
+                                    <td><a id="ctl00_cphLeftColumn_ctl00_lnkToolLink3" href="">Ayarlar</a></td>
                                 </tr>
 
                             </tbody>
@@ -236,67 +248,22 @@
                         <br>
                         <strong>Credit:<span th:text="${session.user.userCharacter.credit}"></span></strong>
                         <div class="menu">
-                            <h3 class="menu">
-                                Kariyer ve Aktivite
-                            </h3>
+                            <h3 class="menu">Menu</h3>
                             <ul>
-                                <li id="mnuToolTipFocus"><a href="">Odaklar</a></li>
-                                <li id="mnuToolTipImproveCharacter"><a href="">Karakteri Geliştir</a> (8 dp)</li>
+                                <li id="mnuToolTipFocus"><a href="">Robbery</a></li>
+                                <li id="mnuToolTipImproveCharacter"><a href="">Nightlife</a></li>
                                 <!-- buraya dp kısmına biz ayar çekicez -->
-                                <li><a href="">Davetiyeler ve İstekler</a></li>
-                                <li><a href="">Yetenekler</a></li>
-                                <li id="mnuToolTipSongs"><a href="">Silahlar</a></li>
-                                <li><a href="">Uçuşlar</a></li>
+                                <li><a href="">Quests</a></li>
+                                <li><a href="">Equipment</a></li>
+                                <li id="mnuToolTipSongs"><a href="">Buildings</a></li>
+                                <li><a href="">Bank</a></li>
 
-                                <li><a href="">Görevler</a></li>
+                                <li><a href="">Hospital</a></li>
 
-                                <li><a href="">Aktiviteler</a></li>
-
-
-                                <li id="mnuToolTipPersonality"><a href="">Kişilik ve Davranış</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="menu">
-                            <h3 class="menu">
-                                Varlıklar
-                            </h3>
-                            <ul>
-                                <li id="mnuToolTipItems"><a href="">Eşyalar</a></li>
-                                <li><a href="">Barınma ve Erişim Şifreleri</a></li>
-                                <li><a href="">Ekonomi</a></li>
-                                <li><a href="">Araçlar</a></li>
-                                <li><a href="">Şirket Hisseleri</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="menu">
-                            <h3 class="menu">
-                                Ticaret
-                            </h3>
-                            <ul>
-                                <li id="mnuToolTipShoppingAssistant"><a href="">Alışveriş Yardımcısı</a></li>
-                                <li><a href="">Hediyeler ve Teklifler</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="menu">
-                            <h3 class="menu">
-                                Ekstralar
-                            </h3>
-                            <ul>
-                                <li><a href="">Ayarlar ve İzinler</a></li>
-
-                                <li><a href="">Adres Defteri</a></li>
-
-                                <li><a href="">Notlar</a></li>
-
-                                <li id=""><a href="">Portre</a></li>
+                                <li><a href="">Casino</a></li>
 
 
-
+                                <li id="mnuToolTipPersonality"><a href="">Prison</a></li>
 
                             </ul>
                         </div>

@@ -11,18 +11,25 @@ div#topcolumn {
 }
 
 div.StartImage {
-    background: url("https://www.popmundo.com/Static/Images/Front/Megadome.jpg") no-repeat;
+    background: url("https://wallpapercave.com/wp/wp2777563.jpg") no-repeat;
     height: 300px;
     max-width: 725px;
+    background-size: cover;
 }
-
+p {
+    color: white;
+}
 div#header img.logo,
 div.gameimage,
 div#headermenu,
 div.forumMessageHeader {
     margin-bottom: 15px;
 }
-
+div#stats tbody tr td {
+    color: white;
+    font-size: 12px;
+    padding-right: 5px;
+}
 form {
     display: block;
     margin-top: 0em;
@@ -42,18 +49,22 @@ div#top-menu-notifications-list h2 {
     color: white;
 }
 
+div.box h2 {
+    margin: -10px -10px 10px;
+    padding: 5px 5px 5px 10px;
+}
+
+div.box {
+    margin: 0 0 15px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
 h3,
 strong {
     color: white;
 }
 
-div#header {
-    /*background-image: url();*/
-}
-
-div#header {
-    height: 65px;
-}
 
 div#header-commands {
     margin: 10px 22px 0 0;
@@ -110,11 +121,6 @@ div#ppm-detachable-shadow {
     display: none;
 }
 
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 html,
 input,
@@ -122,19 +128,6 @@ select,
 textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
-}
-
-#headbar {
-    background: transparent url("https://s36-tr.bitefight.gameforge.com/img/layout/h2.jpg") repeat-x;
-    font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
-    height: 32px;
-    left: 0;
-    padding: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 3000;
 }
 
 div#ppm-wrapper {
@@ -202,17 +195,6 @@ ul li {
     padding: 0;
 }
 
-div#ppm-main {
-    background-color: rgba(80, 80, 80, 0.57);
-}
-
-div#ppm-main {
-    clear: both;
-    overflow: auto;
-    margin: 0;
-    border-radius: 10px;
-}
-
 div#ppm-content {
     margin: 0 0 0 25px;
     float: left;
@@ -225,14 +207,98 @@ div.editor a.button:hover {
     background: #eee;
 }
 
-div.box {
+div.content p {
     margin: 0 0 15px;
-    padding: 10px;
-    overflow-wrap: break-word;
+    padding: 0 10px;
 }
 
+div.signupBox {
+    color: #fff;
+    overflow: auto;
+    padding: 15px;
+    background: url(https://cache.desktopnexus.com/thumbseg/2167/2167404-bigthumbnail.jpg) no-repeat !important;
+    background-size: cover !important;
+    border-radius: 30px;
+}
+div.noteheader, div.avatarMaker, div#header, div.box h2, div.box div.tabs, div#top-menu-notifications-list h2{
+    border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+}
+.StartImage, input.round, select.round {
+    border-radius: 7px !important;
+    -moz-border-radius: 7px !important;
+    -webkit-border-radius: 7px !important;
+}
+input.round {
+    background: #fff;
+    border: 1px solid #999;
+    padding: 3px;
+}
+input[type=submit], input[type=button] {
+    border-radius: 7px !important;
+    -moz-border-radius: 7px !important;
+    -webkit-border-radius: 7px !important;
+    padding: 2px 5px;
+    border: 1px solid #999;
+}
+input[type=submit]:hover, input[type=button]:hover {
+    background-color: #fafafa;
+}
+.right {
+    text-align: right!important;
+}
+.width100 {
+    width: 100%!important;
+}
+.width95 {
+    width: 95%!important;
+}
+.width90 {
+    width: 90%!important;
+}
+.width49 {
+    width: 49%!important;
+}
 .ofauto {
     overflow: auto;
+}
+div#headbar ul li {
+    display: inline;
+}
+div#sub-header {
+    background: #484143;
+    height: 65px;
+    border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+}
+div#ppm-bottom-spacer {
+    height: 50px;
+}
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center!important;
+}
+div#ppm-footer {
+    border-bottom: 20px solid #564d4f;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+div#headbar ul li a{
+    color: rgb(224, 224, 224);
+    padding: 9px 5px 9px 5px;
+    height: 32px;
+}
+
+div#headbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 9px 0 0 0;
+    text-align: center;
 }
 
 div.charMainToolbox {
@@ -270,9 +336,10 @@ div#topcolumn {
 }
 
 div.StartImage {
-    background: url("https://www.popmundo.com/Static/Images/Front/Megadome.jpg") no-repeat;
+    background: url("https://wallpapercave.com/wp/wp2777563.jpg") no-repeat;
     height: 300px;
     max-width: 725px;
+    background-size: cover;
 }
 
 div#header img.logo,
@@ -306,12 +373,9 @@ strong {
     color: white;
 }
 
-div#header {
-    /*background-image: url();*/
-}
 
 div#header {
-    height: 65px;
+    height: 20px;
 }
 
 div#header-commands {
@@ -372,7 +436,6 @@ div#ppm-detachable-shadow {
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 html,
@@ -382,18 +445,29 @@ textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
 }
-
+h1, h2 {
+    color: white;
+}
 #headbar {
-    background: #3d3336 url("https://s36-tr.bitefight.gameforge.com/img/layout/h2.jpg") repeat-x;
     font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
     height: 32px;
     left: 0;
     padding: 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     top: 0;
     width: 100%;
     z-index: 3000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+	border-color: -moz-use-text-color #564d4f #564d4f -moz-use-text-color;
+	border-style: none #87777c #87777c none;
+	border-width: medium 1px 1px medium;
+	background: none repeat scroll 0 0  #564d4fc5;
+	-moz-border-bottom-colors: none;
+	-moz-border-image: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
 }
 
 div#ppm-wrapper {
@@ -469,7 +543,6 @@ div#ppm-main {
     clear: both;
     overflow: auto;
     margin: 0;
-    border-radius: 10px;
 }
 
 div#ppm-content {
@@ -483,12 +556,14 @@ table.data tr.even td,
 div.editor a.button:hover {
     background: #eee;
 }
-
-div.box {
-    margin: 0 0 15px;
-    padding: 10px;
-    overflow-wrap: break-word;
+div.box h2 {
+    font-size: 12px;
+    background-color: #484143;
+    background-repeat: repeat-x;
+    color: #fff;
+    font-weight: 500;
 }
+
 
 .ofauto {
     overflow: auto;
@@ -516,44 +591,26 @@ div.charMainInfo {
     clear: both;
 }
 
+div.box {
+    margin: 0 0 15px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
 div.box,
 table.data tr.even td,
 div.editor a.button:hover {
     background: #87777c;
 }
 
-div.box {
-    margin: 0 0 15px;
-    padding: 10px;
-    overflow-wrap: break-word;
-    border-radius: 20px;
-}
-
 div#ppm-sidemenu {
     margin: 0 25px 0 0;
     float: right;
     width: 220px;
 }
 
-div#ppm-footer {
-    background-color: white;
-    background-repeat: no-repeat;
-}
-
-div.box {
-    margin: 0 0 15px;
-    padding: 10px;
-    overflow-wrap: break-word;
-    border-radius: 20px;
-}
-
 div#ppm-sidemenu {
     margin: 0 25px 0 0;
     float: right;
     width: 220px;
-}
-
-div#ppm-footer {
-    background-color: white;
-    background-repeat: no-repeat;
 }

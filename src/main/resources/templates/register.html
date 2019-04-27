@@ -6,16 +6,27 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
+
 <body data-gr-c-s-loaded="true" style="">
     <div id="header" role="banner">
-        <div id="headbar" class="cityofcrime" style="display: block;"></div>
+        <div id="headbar" class="cityofcrime" style="display: block;">
+            <ul>
+                <li><a href="">Welcome</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
     </div>
     <div id="ppm-wrapper">
-        <div id="header-logo" style="background-color: grey">
-            <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true" style="position: relative; left: -20;">
+        <div id="sub-header" role="banner">
+
+            <div id="header-logo">
+                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true"
+                    style="position: relative; left: -20;">
+            </div>
         </div>
         <div id="ppm-main">
             <div id="topcolumn">
@@ -30,7 +41,7 @@
                     be conquering the world, cutting chart-topping records, and leaving a wake of tantalizing scandals
                     behind you!</p>
 
-                <div>
+                <div class="box signupBox signup_Random_2">
                     <form action="/register" method="post">
                         <div class="width49 float_left">
                             <h3 class="register">Register to join the war!</h3>
@@ -52,11 +63,12 @@
                             </p>
                             <p>
                                 <strong>Password:</strong><br>
-                                <input name="password" type="text" maxlength="20" class="round width90">
+                                <input name="password" type="password" maxlength="20" class="round width90">
                             </p>
                             <p>
                                 <strong>Style:</strong>
-                                <select name="type" class="selectpicker">
+                                <br>
+                                <select name="type" class="selectpicker round">
                                     <option data-icon="fa-heart" value="1">Gangster</option>
                                     <option data-icon="fa-heart" value="2">Assassin</option>
                                     <option data-icon="fa-heart" value="3">Dealer</option>
@@ -68,35 +80,44 @@
                         </div>
                     </form>
                 </div>
-                <p >The game is played in real time and the game keeps on going even when you're not logged in.
+                <p>The game is played in real time and the game keeps on going even when you're not logged in.
                     Success in the game is determined by careful strategy and good timing, not by constant online
                     presence. It's perfectly possible to be successful in the game by logging in a couple of times a
                     week to check up on things.</p>
-                <p >City of Crime is free of charge and no downloads are necessary to play it. If you can read this
+                <p>City of Crime is free of charge and no downloads are necessary to play it. If you can read this
                     you're
                     good to go.</p>
             </div>
             <div role="navigation">
-                <div class="box">
-                    <form action="/login" method="post">
-                        <h2>Log In</h2>
-                        <p>
-                            <strong>Email:</strong><br>
-                            <input name="email" type="text" maxlength="100" class="round width90">
-                        </p>
-                        <p>
-                            <strong>Password:</strong><br>
-                            <input name="password" type="text" maxlength="100" class="round width90">
-                        </p>
-                        <p>
-                            <input type="submit" name="loginSubmit" value="Login" onclick="" id="loginSubmit"
-                                class="cnf btn btn-dark">
-                        </p>
-                    </form>
+                <div id="ppm-sidemenu" role="navigation">
+                    <div class="box" style="-webkit-border-radius: 7px !important;">
+
+                        <form action="/login" method="post">
+                            <h2>Log In</h2>
+                            <p>
+                                <strong>Email:</strong><br>
+                                <input name="email" type="text" maxlength="100" class="round width100">
+                            </p>
+                            <p>
+                                <strong>Password:</strong><br>
+                                <input name="password" type="password" maxlength="100" class="round width100">
+                            </p>
+                            <p class="right">
+                                <input type="submit" name="loginSubmit" value="OK!" onclick="" id="loginSubmit"
+                                    class="cnf btn btn-dark">
+                            </p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="clear center" style="background-color: #564d4f;">
+            <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
+                style="position: relative; left: -20;">
+        </div>
+        <div id="ppm-footer"></div>
     </div>
+    <div id="ppm-bottom-spacer"></div>
 </body>
 
 </html>
