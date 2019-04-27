@@ -4,222 +4,218 @@
     <title th:text="'City of Crime - ' + ${session.user.firstName + ' ' + session.user.lastName}"></title>></title>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
-    <form name="javaForm" method="post" action="./Character" id="javaForm">
-        <div id="header" role="banner">
-            <div id="headbar" class="cityofcrime" style="display: block;">
-                <ul>
-                    <form method="post">
-                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
-                        <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character"></li>
-                        <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
-                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
-                    </form>
-                </ul>
+<form name="javaForm" method="post" action="./Character" id="javaForm">
+    <div id="header" role="banner">
+        <div id="headbar" class="cityofcrime" style="display: block;">
+            <ul>
+                <form method="post">
+                    <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
+                    <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character">
+                    </li>
+                    <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
+                    <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
+                </form>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div id="ppm-wrapper">
+        <div id="sub-header" role="banner">
+
+            <div id="header-logo">
+                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true"
+                     style="position: relative; left: -20;">
             </div>
         </div>
-        </div>
-        <div id="ppm-wrapper">
-            <div id="sub-header" role="banner">
-
-                <div id="header-logo">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true"
-                        style="position: relative; left: -20;">
-                </div>
-            </div>
-            <div id="ppm-main">
-                <div id="ppm-content" role="main" class="content">
-                    <div class="box ofauto charPresBox">
-                        <div id="karakter_basarilari" class="characterAchievements">
-                            <div title="achv1" class="Achievement Achievement_196"></div>
-                            <div title="achv2" class="Achievement Achievement_254"></div>
-                        </div>
-                        <h2 th:text="${session.user.firstName +' '+ session.user.lastName}"></h2>
-                        <div class="avatar pointer idTrigger"
-                            style="background: url('https://shmector.com/_ph/4/275274558.png') no-repeat;"
-                            onclick="window.location.href='';">
-                            <div class="idHolder" style="display: none;"></div>
-                        </div>
-                        <div class="float_left characterPresentation">
-                            <p>
-                                <strong th:text="${session.user.username}"></strong> is a
-                                <strong>
-                                    <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
-                                    <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
-                                    <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
-                                </strong>
-                                and is located in
-                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>.
-                            </p>
-                            <p><strong th:text="${session.user.username}"></strong> likes to
-                                <strong>
-                                    <span th:if="${session.user.userCharacter.type == 1}">Street meetings</span>
-                                    <span th:if="${session.user.userCharacter.type == 2}">Targets</span>
-                                    <span th:if="${session.user.userCharacter.type == 3}">Deals</span>
-                                </strong>
-                                during off hours and
-                                is trying to <strong>improve skills</strong>
-                                in order to get ahead professionally.</p>
-
-                            <div class="tb nobmargin" id="ctl00_cphLeftColumn_ctl02_tbxStatement">
-                                <div class="tbc tbcw">
-                                    <span class="em">I guess I have to say something cool...</span>
-                                </div>
-                            </div>
-                            <br></br>
-                            <div id="stats">
-                                <table align="center">
-                                    <tbody>
-                                    <tr>
-                                        <td>Stamina:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.stamina}">100</td>
-                                        <td>Respect:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
-                                        <td>Money:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.money}"> 100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Experience:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
-                                        <td>Intelligence:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
-                                        <td>Strength:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tolerance:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.tolerance}">100</td>
-                                        <td>Charisma:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.charisma}">100</td>
-                                        <td>Power:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.power}">100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Credit:</td>
-                                        <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+        <div id="ppm-main">
+            <div id="ppm-content" role="main" class="content">
+                <div class="box ofauto charPresBox">
+                    <div id="karakter_basarilari" class="characterAchievements">
+                        <div title="achv1" class="Achievement Achievement_196"></div>
+                        <div title="achv2" class="Achievement Achievement_254"></div>
                     </div>
-                    <div id="robbery">
-                        <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
-                            width="100px" height="100px">
-                        <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
-                            evidence...
-                            Make it fast and clean then maybe you will get away with some fresh dineros.
-                            Some crimes are too hard to handle by your own, to succeed you will need help from your crew
-                            in the mob.
-                            You will discover more and harder robberies after completing new levels!</p>
+                    <h2 th:text="${session.user.firstName +' '+ session.user.lastName}"></h2>
+                    <div class="avatar pointer idTrigger"
+                         style="background: url('https://shmector.com/_ph/4/275274558.png') no-repeat;"
+                         onclick="window.location.href='';">
+                        <div class="idHolder" style="display: none;"></div>
                     </div>
-                    <div class="clear"></div>
-                    <div class="box" id="crimes">
-                        <h2>Find locales</h2>
+                    <div class="float_left characterPresentation">
                         <p>
-                            Find <select name="ctl00$cphLeftColumn$ctl00$ddlLocaleType"
-                                id="ctl00_cphLeftColumn_ctl00_ddlLocaleType" class="maxwidth125px round">
-                                <option selected="selected" value="0">All locale types</option>
-                                <option value="110">Abandoned Warehouse</option>
-                                <option value="2">Airport</option>
-                                <option value="83">Arms Dealer</option>
-
-
-                            </select> in zone <select name="ctl00$cphLeftColumn$ctl00$ddlCityZone"
-                                id="ctl00_cphLeftColumn_ctl00_ddlCityZone" class="maxwidth125px round">
-                                <option value="0">All city zones</option>
-                                <option value="-1">The zone I'm in</option>
-                                <option value="71">Bulevardi (Commercial)</option>
-                                <option value="70">Eira (Residential)</option>
-
-                            </select>
+                            <strong th:text="${session.user.username}"></strong> is a
+                            <strong>
+                                <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
+                                <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
+                                <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
+                            </strong>
+                            and is located in
+                            <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>.
                         </p>
-                        <p class="actionbuttons">
-                            <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind" value="Find locales"
-                                id="ctl00_cphLeftColumn_ctl00_btnFind">
-                        </p>
-                    </div>
-                    <table class="data">
-                        <tbody>
-                            <tr>
-                                <th colspan="2" class="single">Important Locales</th>
-                            </tr>
-                            <tr class="odd">
-                                <td class="width40">Airport</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
-                                        href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan lentoasema</a></td>
-                            </tr>
-                            <tr class="even">
-                                <td>Hospital</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
-                                        href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
-                            </tr>
-                            <tr class="odd">
-                                <td>City Hall</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
-                                        href="/World/Popmundo.aspx/Locale/26594">Helsingin kaupungintalo</a></td>
-                            </tr>
-                            <tr class="even">
-                                <td>Court House</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
-                                        href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
-                            </tr>
-                            <tr class="odd">
-                                <td>Motorway out of town</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
-                                        href="/World/Popmundo.aspx/Locale/2893834">Maantie Maailmalle</a></td>
-                            </tr>
-                            <tr class="even">
-                                <td>Lost and Found</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkLostAndFound"
-                                        href="/World/Popmundo.aspx/Locale/2962371">Löytötavaratoimisto</a></td>
-                            </tr>
-                            <tr class="odd">
-                                <td>Temple</td>
-                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkTemple"
-                                        href="/World/Popmundo.aspx/Locale/106801">Helsingin tuomiokirkko</a></td>
-                            </tr>
+                        <p><strong th:text="${session.user.username}"></strong> likes to
+                            <strong>
+                                <span th:if="${session.user.userCharacter.type == 1}">Street meetings</span>
+                                <span th:if="${session.user.userCharacter.type == 2}">Targets</span>
+                                <span th:if="${session.user.userCharacter.type == 3}">Deals</span>
+                            </strong>
+                            during off hours and
+                            is trying to <strong>improve skills</strong>
+                            in order to get ahead professionally.</p>
 
-                        </tbody>
-                    </table>
-                </div>
-                <div id="ppm-sidemenu" role="navigation">
-                    <div class="box">
-                        <div class="menu">
-                            <h3 class="menu">Menu</h3>
-                            <ul>
-                                <li id="mnuToolTipFocus"><a href="http://localhost:8080/robbery">Robbery</a></li>
-                                <li id="mnuToolTipImproveCharacter"><a href="">Nightlife</a></li>
-                                <!-- buraya dp kısmına biz ayar çekicez -->
-                                <li><a href="">Quests</a></li>
-                                <li><a href="">Equipment</a></li>
-                                <li id="mnuToolTipSongs"><a href="">Buildings</a></li>
-                                <li><a href="">Bank</a></li>
-
-                                <li><a href="">Hospital</a></li>
-
-                                <li><a href="">Casino</a></li>
-
-
-                                <li id="mnuToolTipPersonality"><a href="">Prison</a></li>
-
-                            </ul>
+                        <div class="tb nobmargin" id="ctl00_cphLeftColumn_ctl02_tbxStatement">
+                            <div class="tbc tbcw">
+                                <span class="em">I guess I have to say something cool...</span>
+                            </div>
+                        </div>
+                        <br></br>
+                        <div id="stats">
+                            <table align="center">
+                                <tbody>
+                                <tr>
+                                    <td>Stamina:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.stamina}">100</td>
+                                    <td>Respect:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
+                                    <td>Money:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.money}"> 100</td>
+                                </tr>
+                                <tr>
+                                    <td>Experience:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
+                                    <td>Intelligence:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                                    <td>Strength:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
+                                </tr>
+                                <tr>
+                                    <td>Tolerance:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.tolerance}">100</td>
+                                    <td>Charisma:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.charisma}">100</td>
+                                    <td>Power:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.power}">100</td>
+                                </tr>
+                                <tr>
+                                    <td>Credit:</td>
+                                    <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="clear center" style="background-color: #564d4f;">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                        style="position: relative; left: -20;">
+                <div id="robbery">
+                    <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
+                         width="100px" height="100px">
+                    <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
+                        evidence...
+                        Make it fast and clean then maybe you will get away with some fresh dineros.
+                        Some crimes are too hard to handle by your own, to succeed you will need help from your crew
+                        in the mob.
+                        You will discover more and harder robberies after completing new levels!</p>
                 </div>
-                <div id="ppm-footer"></div>
+                <div class="clear"></div>
+                <div class="box" id="crimes">
+                    <h2>Find locales</h2>
+                    <p>
+                        Find <select name="ctl00$cphLeftColumn$ctl00$ddlLocaleType"
+                                     id="ctl00_cphLeftColumn_ctl00_ddlLocaleType" class="maxwidth125px round">
+                        <option selected="selected" value="0">All locale types</option>
+                        <option value="110">Abandoned Warehouse</option>
+                        <option value="2">Airport</option>
+                        <option value="83">Arms Dealer</option>
+
+
+                    </select> in zone <select name="ctl00$cphLeftColumn$ctl00$ddlCityZone"
+                                              id="ctl00_cphLeftColumn_ctl00_ddlCityZone" class="maxwidth125px round">
+                        <option value="0">All city zones</option>
+                        <option value="-1">The zone I'm in</option>
+                        <option value="71">Bulevardi (Commercial)</option>
+                        <option value="70">Eira (Residential)</option>
+
+                    </select>
+                    </p>
+                    <p class="actionbuttons">
+                        <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind" value="Find locales"
+                               id="ctl00_cphLeftColumn_ctl00_btnFind">
+                    </p>
+                </div>
+                <table class="data">
+                    <tbody class="data-tbody">
+                    <tr>
+                        <th colspan="2" class="single">Important Locales</th>
+                    </tr>
+                    <tr class="odd">
+                        <td class="width40">Airport</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
+                               href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan lentoasema</a></td>
+                    </tr>
+                    <tr class="even">
+                        <td>Hospital</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
+                               href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
+                    </tr>
+                    <tr class="odd">
+                        <td>City Hall</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
+                               href="/World/Popmundo.aspx/Locale/26594">Helsingin kaupungintalo</a></td>
+                    </tr>
+                    <tr class="even">
+                        <td>Court House</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
+                               href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
+                    </tr>
+                    <tr class="odd">
+                        <td>Motorway out of town</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
+                               href="/World/Popmundo.aspx/Locale/2893834">Maantie Maailmalle</a></td>
+                    </tr>
+                    <tr class="even">
+                        <td>Lost and Found</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkLostAndFound"
+                               href="/World/Popmundo.aspx/Locale/2962371">Löytötavaratoimisto</a></td>
+                    </tr>
+                    <tr class="odd">
+                        <td>Temple</td>
+                        <td><a id="ctl00_cphLeftColumn_ctl00_lnkTemple"
+                               href="/World/Popmundo.aspx/Locale/106801">Helsingin tuomiokirkko</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
             </div>
-            <div id="ppm-bottom-spacer"></div>
+            <div id="ppm-sidemenu" role="navigation">
+                <div class="box">
+                    <div class="menu">
+                        <h3 class="menu">Menu</h3>
+                        <ul>
+                            <li id="mnuToolTipFocus"><a href="http://localhost:8080/robbery">Robbery</a></li>
+                            <li id="mnuToolTipImproveCharacter"><a href="">Nightlife</a></li>
+                            <!-- buraya dp kısmına biz ayar çekicez -->
+                            <li><a href="">Quests</a></li>
+                            <li><a href="">Equipment</a></li>
+                            <li id="mnuToolTipSongs"><a href="">Buildings</a></li>
+                            <li><a href="">Bank</a></li>
+                            <li><a href="">Hospital</a></li>
+                            <li><a href="">Casino</a></li>
+                            <li id="mnuToolTipPersonality"><a href="">Prison</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+        <div class="clear center" style="background-color: #564d4f;">
+            <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
+                 style="position: relative; left: -20;">
+        </div>
+        <div id="ppm-footer"></div>
+    </div>
+    <div id="ppm-bottom-spacer"></div>
+    </div>
+</form>
 
 
 </body>

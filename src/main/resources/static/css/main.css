@@ -432,9 +432,14 @@ div.avatar {
 
 #crimes {
     width: 40%;
-    margin-top: 50px;
+    margin-top: 15px;
     float: left;
 }
+
+.table-tbody{
+    
+}
+
 div#header-logo img {
     margin: -15px 0 0 222px;
 }
