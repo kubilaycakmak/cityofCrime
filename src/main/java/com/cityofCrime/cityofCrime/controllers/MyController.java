@@ -86,4 +86,10 @@ public class MyController {
         return "register";
     }
 
+    @RequestMapping("/logout")
+    public String goOut(){
+        session.invalidate();
+        return "register";
+    }
+
 }

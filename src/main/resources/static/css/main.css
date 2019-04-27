@@ -186,6 +186,13 @@ div#top-menu-nav {
     height: 32px;
 }
 
+.input-nav{
+    background-color: transparent !important;
+    color: rgb(224, 224, 224) !important;
+    border: 0px solid transparent !important;
+    font-size: 11px !important;
+}
+
 div#top-menu-nav ul {
     list-style-type: none;
     margin: 0;

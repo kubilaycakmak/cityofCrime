@@ -12,10 +12,12 @@
         <div id="header" role="banner">
             <div id="headbar" class="cityofcrime" style="display: block;">
                 <ul>
-                    <li><a href="">Welcome</a></li>
-                    <li><a href="">Character</a></li>
-                    <li><a href="">Help</a></li>
-                    <li><a href="">Log out</a></li>
+                    <form method="post">
+                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
+                        <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character"></li>
+                        <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
+                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
+                    </form>
                 </ul>
             </div>
         </div>
@@ -71,34 +73,34 @@
                             <div id="stats">
                                 <table align="center">
                                     <tbody>
-                                        <tr>
-                                            <td>Stamina:</td>
-                                            <td class="stat">100</td>
-                                            <td>Respect:</td>
-                                            <td class="stat">100</td>
-                                            <td>Money:</td>
-                                            <td class="stat"> 100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Experience:</td>
-                                            <td class="stat">100</td>
-                                            <td>Intelligence:</td>
-                                            <td class="stat">100</td>
-                                            <td>Strength:</td>
-                                            <td class="stat">100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tolerance:</td>
-                                            <td class="stat">100</td>
-                                            <td>Charisma:</td>
-                                            <td class="stat">100</td>
-                                            <td>Power:</td>
-                                            <td class="stat">100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Credit:</td>
-                                            <td class="stat">100</td>
-                                        </tr>
+                                    <tr>
+                                        <td>Stamina:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.stamina}">100</td>
+                                        <td>Respect:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
+                                        <td>Money:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.money}"> 100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Experience:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
+                                        <td>Intelligence:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                                        <td>Strength:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tolerance:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.tolerance}">100</td>
+                                        <td>Charisma:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.charisma}">100</td>
+                                        <td>Power:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.power}">100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Credit:</td>
+                                        <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -186,26 +188,6 @@
                 </div>
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
-                        <h2 id="ctl00_cphRightColumn_ctl00_hdrMain">Character</h2>
-                        <strong>Stamina: <span th:text="${session.user.userCharacter.stamina}"></span></strong>
-                        <br>
-                        <strong>Respect:<span th:text="${session.user.userCharacter.respect}"></span></strong>
-                        <br>
-                        <strong>Money:<span th:text="${session.user.userCharacter.money}"></span></strong>
-                        <br>
-                        <strong>Experience:<span th:text="${session.user.userCharacter.experience}"></span></strong>
-                        <br>
-                        <strong>Intelligence:<span th:text="${session.user.userCharacter.intelligence}"></span></strong>
-                        <br>
-                        <strong>Strength:<span th:text="${session.user.userCharacter.strength}"></span></strong>
-                        <br>
-                        <strong>Tolerance:<span th:text="${session.user.userCharacter.tolerance}"></span></strong>
-                        <br>
-                        <strong>Charisma:<span th:text="${session.user.userCharacter.charisma}"></span></strong>
-                        <br>
-                        <strong>Power:<span th:text="${session.user.userCharacter.power}"></span></strong>
-                        <br>
-                        <strong>Credit:<span th:text="${session.user.userCharacter.credit}"></span></strong>
                         <div class="menu">
                             <h3 class="menu">Menu</h3>
                             <ul>
