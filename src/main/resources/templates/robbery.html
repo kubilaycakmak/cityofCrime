@@ -104,29 +104,85 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="robbery">
+                        <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
+                            width="100px" height="100px">
+                        <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
+                            evidence...
+                            Make it fast and clean then maybe you will get away with some fresh dineros.
+                            Some crimes are too hard to handle by your own, to succeed you will need help from your crew
+                            in the mob.
+                            You will discover more and harder robberies after completing new levels!</p>
+                    </div>
                     <div class="clear"></div>
-                    <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
-                        <h2>Recent diary entries</h2>
-                        <ul class="noheader diaryExtraspace">
-                            <!-- alt satırlarda dinamik -->
-                            <li>I failed to rob a store. I definitely need some help at this.</li>
-                        </ul>
+                    <div class="box" id="crimes">
+                        <h2>Find locales</h2>
+                        <p>
+                            Find <select name="ctl00$cphLeftColumn$ctl00$ddlLocaleType"
+                                id="ctl00_cphLeftColumn_ctl00_ddlLocaleType" class="maxwidth125px round">
+                                <option selected="selected" value="0">All locale types</option>
+                                <option value="110">Abandoned Warehouse</option>
+                                <option value="2">Airport</option>
+                                <option value="83">Arms Dealer</option>
+
+
+                            </select> in zone <select name="ctl00$cphLeftColumn$ctl00$ddlCityZone"
+                                id="ctl00_cphLeftColumn_ctl00_ddlCityZone" class="maxwidth125px round">
+                                <option value="0">All city zones</option>
+                                <option value="-1">The zone I'm in</option>
+                                <option value="71">Bulevardi (Commercial)</option>
+                                <option value="70">Eira (Residential)</option>
+
+                            </select>
+                        </p>
+                        <p class="actionbuttons">
+                            <input type="submit" name="ctl00$cphLeftColumn$ctl00$btnFind" value="Find locales"
+                                id="ctl00_cphLeftColumn_ctl00_btnFind">
+                        </p>
                     </div>
-                    <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
-                        <h2>Hot Trace</h2>
-                        <p>These are your five last whereabouts, as far as you can tell. Only you can see this
-                            information.</p>
-                        <ul>
-                            <li>14.10.2017, 21:18: <a href="">Helsinki Hotel</a></li> <!-- burasıda dinamik olacak -->
-                        </ul>
-                    </div>
-                    <div class="box">
-                        <h2>
-                            Prominent Clothes & Tattoos</h2>
-                        <p>Joni-Petteri isn't wearing anything that covers his private parts.</p>
-                        <!-- burayı yine veri olarak çekicez -->
-                    </div>
+                    <table class="data">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" class="single">Important Locales</th>
+                            </tr>
+                            <tr class="odd">
+                                <td class="width40">Airport</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
+                                        href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan lentoasema</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Hospital</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
+                                        href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>City Hall</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
+                                        href="/World/Popmundo.aspx/Locale/26594">Helsingin kaupungintalo</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Court House</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
+                                        href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Motorway out of town</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
+                                        href="/World/Popmundo.aspx/Locale/2893834">Maantie Maailmalle</a></td>
+                            </tr>
+                            <tr class="even">
+                                <td>Lost and Found</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkLostAndFound"
+                                        href="/World/Popmundo.aspx/Locale/2962371">Löytötavaratoimisto</a></td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Temple</td>
+                                <td><a id="ctl00_cphLeftColumn_ctl00_lnkTemple"
+                                        href="/World/Popmundo.aspx/Locale/106801">Helsingin tuomiokirkko</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
@@ -182,6 +238,7 @@
             <div id="ppm-bottom-spacer"></div>
         </div>
     </form>
+
 
 </body>
 

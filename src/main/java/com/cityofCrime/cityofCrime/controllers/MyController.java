@@ -50,6 +50,13 @@ public class MyController {
         return "index";
     }
 
+    @RequestMapping("/robbery")
+    public String getRobbery(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "robbery";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String callLogin() {
         return "register";
