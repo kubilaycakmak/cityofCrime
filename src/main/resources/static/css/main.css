@@ -27,7 +27,8 @@ div.forumMessageHeader {
 }
 div#stats tbody tr td {
     color: white;
-    font-size: 12px;
+    font-size: 10px;
+    font-weight: bolder;
     padding-right: 5px;
 }
 form {
@@ -38,7 +39,12 @@ form {
 div#header-logo img {
     margin: -15px 0 0 222px;
 }
-
+div.box {
+    border-radius: 7px;
+}
+div#ppm-content, div#ppm-sidemenu {
+    margin-top: 10px !important;
+}
 div#header,
 div.box h2,
 div.box div.tabs,
@@ -88,8 +94,8 @@ div.avatar {
 
 div.avatar,
 div.avatar_clean {
-    height: 156px;
-    width: 114px;
+    height: 120px;
+    width: 120px;
 }
 
 div#header-logo img {
@@ -398,11 +404,6 @@ div.avatar {
     margin-right: 10px;
 }
 
-div.avatar,
-div.avatar_clean {
-    height: 156px;
-    width: 114px;
-}
 
 div#header-logo img {
     margin: -15px 0 0 222px;
@@ -543,6 +544,7 @@ div#ppm-main {
     clear: both;
     overflow: auto;
     margin: 0;
+    border-radius: 7px;
 }
 
 div#ppm-content {
