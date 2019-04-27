@@ -52,7 +52,7 @@
                                     <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
                                 </strong>
                                 and is located in
-                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
+                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>.
                             </p>
                             <p><strong th:text="${session.user.username}"></strong> likes to
                                 <strong>
@@ -79,7 +79,7 @@
                                             <td>Respect:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
                                             <td>Money:</td>
-                                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100</td>
+                                            <td class="stat" th:text="${session.user.userCharacter.money}"> 100</td>
                                         </tr>
                                         <tr>
                                             <td>Experience:</td>
@@ -107,45 +107,34 @@
                         </div>
                     </div>
 
+                    <div id="robbery">
+                        <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
+                            width="212px" height="140px">
+                        <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
+                            evidence...
+                            Make it fast and clean then maybe you will get away with some fresh dineros.
+                            Some crimes are too hard to handle by your own, to succeed you will need help from your crew
+                            in the mob.
+                            You will discover more and harder robberies after completing new levels!</p>
+                    </div>
                     <div class="clear"></div>
-                    <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
-                        <h2>Recent diary entries</h2>
-                        <ul class="noheader diaryExtraspace">
-                            <!-- alt satırlarda dinamik -->
-                            <li>I failed to rob a store. I definitely need some help at this.</li>
-                        </ul>
-                    </div>
-                    <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
-                        <h2>Hot Trace</h2>
-                        <p>These are your five last whereabouts, as far as you can tell. Only you can see this
-                            information.</p>
-                        <ul>
-                            <li>14.10.2017, 21:18: <a href="">Helsinki Hotel</a></li> <!-- burasıda dinamik olacak -->
-                        </ul>
-                    </div>
-                    <div class="box">
-                        <h2>
-                            Prominent Clothes & Tattoos</h2>
-                        <p>Joni-Petteri isn't wearing anything that covers his private parts.</p>
-                        <!-- burayı yine veri olarak çekicez -->
-                    </div>
                 </div>
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
                         <div class="menu">
                             <h3 class="menu">Menu</h3>
                             <ul>
-                                <li id="mnuToolTipFocus"><a href="robbery">Robbery</a></li>
-                                <li id="mnuToolTipImproveCharacter"><a href="nightlife">Nightlife</a></li>
+                                <li id="mnuToolTipFocus"><a href="http://localhost:8080/robbery">Robbery</a></li>
+                                <li id="mnuToolTipImproveCharacter"><a href="">Nightlife</a></li>
                                 <!-- buraya dp kısmına biz ayar çekicez -->
-                                <li><a href="quests">Quests</a></li>
-                                <li><a href="equipment">Equipment</a></li>
-                                <li id="mnuToolTipSongs"><a href="buildings">Buildings</a></li>
-                                <li><a href="bank">Bank</a></li>
+                                <li><a href="">Quests</a></li>
+                                <li><a href="">Equipment</a></li>
+                                <li id="mnuToolTipSongs"><a href="">Buildings</a></li>
+                                <li><a href="">Bank</a></li>
 
-                                <li><a href="hospital">Hospital</a></li>
+                                <li><a href="">Hospital</a></li>
 
-                                <li><a href="casino">Casino</a></li>
+                                <li><a href="">Casino</a></li>
 
 
                                 <li id="mnuToolTipPersonality"><a href="">Prison</a></li>

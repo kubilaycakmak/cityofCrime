@@ -39,10 +39,21 @@ table.data tbody tr td {
     font-size: 12px;
 }
 table.data {
-    border: 0;
+    border: 1px solid #87777c;
     border-spacing: 0;
     margin: 0 0 15px;
-    width: 100%;
+    width: 45%;
+    float: right;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+.data-tbody tr td {
+    color: white;
+}
+th.single {
+    background: #484143;
+    text-align: left;
+    color: white;
 }
 #robbery img {
     float: left;
@@ -429,15 +440,11 @@ div.avatar {
     float: left;
     margin-right: 10px;
 }
-
 #crimes {
-    width: 40%;
+    width: 30%;
     margin-top: 15px;
+    margin-left: 20px;
     float: left;
-}
-
-.table-tbody{
-    
 }
 
 div#header-logo img {
@@ -578,7 +585,6 @@ div#ppm-main {
     clear: both;
     overflow: auto;
     margin: 0;
-    border-radius: 7px;
 }
 
 div#ppm-content {
