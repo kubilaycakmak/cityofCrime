@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type="text/javascript" th:src="@{/script/robbery.js}"></script>
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
@@ -152,9 +153,9 @@
                     <h2>Single User Crimes</h2>
                     <p>
                         <form action="robbery" method="POST">
-                            <select name="robberyChoose" id="ctl00_cphLeftColumn_ctl00_ddlLocaleType"
+                            <select name="robberyChoose" id="robberySelector"
                                 class="maxwidth125px round">
-                                <option selected="selected" value="0">All locale types</option>
+                                <option value="0">All locale types</option>
                                 <option value="job1">Abandoned Warehouse</option>
                                 <option value="job2">Airport</option>
                                 <option value="job3">Arms Dealer</option>
@@ -175,28 +176,23 @@
                         </tr>
                         <tr class="odd">
                             <td class="width40">Stamina required:</td>
-                            <td><a id="ctl00_cphLeftColumn_ctl00_lnkAirport"
-                                    href="/World/Popmundo.aspx/Locale/26591">Helsinki-Vantaan lentoasema</a></td>
+                            <td><p>-</p></td>
                         </tr>
                         <tr class="even">
                             <td>Spirit:</td>
-                            <td><a id="ctl00_cphLeftColumn_ctl00_lnkHospital"
-                                    href="/World/Popmundo.aspx/Locale/80029">Marian sairaala</a></td>
+                            <td><p>-</p></td>
                         </tr>
                         <tr class="odd">
                             <td>Robery power:</td>
-                            <td><a id="ctl00_cphLeftColumn_ctl00_lnkCityHall"
-                                    href="/World/Popmundo.aspx/Locale/26594">Helsingin kaupungintalo</a></td>
+                            <td><p>-</p></td>
                         </tr>
                         <tr class="even">
                             <td>Reward:</td>
-                            <td><a id="ctl00_cphLeftColumn_ctl00_lnkCourthouse"
-                                    href="/World/Popmundo.aspx/Locale/198201">Oikeustalo</a></td>
+                            <td><p>-</p></td>
                         </tr>
                         <tr class="odd">
                             <td>Success probability:</td>
-                            <td><a id="ctl00_cphLeftColumn_ctl00_lnkHigway"
-                                    href="/World/Popmundo.aspx/Locale/2893834">Maantie Maailmalle</a></td>
+                            <td><p>-</p></td>
                         </tr>
 
 
