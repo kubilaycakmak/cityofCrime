@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="copy" id="header" role="banner">
+        <div id="headbar" class="cityofcrime" style="display: block;">
+            <ul>
+                <form method="post">
+                    <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
+                    </li>
+                    <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character">
+                    </li>
+                    <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
+                    <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout">
+                    </li>
+                </form>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -10,34 +10,61 @@ div#topcolumn {
     margin: 0 25px;
 }
 
-div.StartImage {
-    background: url("https://wallpapercave.com/wp/wp2777563.jpg") no-repeat;
-    height: 300px;
-    max-width: 725px;
-    background-size: cover;
-}
-p {
+p, 
+div#stats tbody tr td,
+.data-tbody tr td,
+th.single,
+div#header,
+div.box h2,
+div.box div.tabs,
+div#top-menu-notifications-list h2,
+h3,
+strong,
+input[type=submit]:hover,
+input[type=button]:hover,
+h1,
+h2,
+li,
+span.em button.nightlife:hover {
     color: white;
 }
+
 div#header img.logo,
 div.gameimage,
 div#headermenu,
 div.forumMessageHeader {
     margin-bottom: 15px;
 }
+
+div,
+form,
+ul,
+menu,
+dir form, 
+ul,
+menu,
+dir {
+    display: block;
+}
+
+div.box,
+div.content p table.data {
+    margin: 0 0 15px;
+}
+
 div#stats tbody tr td {
-    color: white;
     font-size: 10px;
     font-weight: bolder;
     padding-right: 25px;
 }
 form {
-    display: block;
     margin-top: 0em;
 }
-table.data tbody tr td {
+table.data tbody tr td,
+div.box h2 {
     font-size: 12px;
 }
+
 div.Error {
     background: url("https://media.tenor.com/images/ce3659cacf44c748cb1e120b2c31cdfb/tenor.gif") 170px 0 no-repeat;
     height: 474px;
@@ -45,68 +72,41 @@ div.Error {
     margin-left: -45px;
     background-size: contain;
 }
+
 table.data {
     border: 1px solid #87777c;
     border-spacing: 0;
-    margin: 0 0 15px;
     width: 45%;
     float: right;
     margin-right: 30px;
     margin-top: 15px;
 }
-.data-tbody tr td {
-    color: white;
-}
+
 th.single {
     background: #484143;
     text-align: left;
-    color: white;
 }
+
 #robbery img {
     float: left;
     margin-right: 10px;
 }
 
-div#header-logo img {
-    margin: -15px 0 0 222px;
-}
-div.box {
+div.box,
+div#ppm-sidemenu {
     border-radius: 7px;
 }
+
 div#ppm-content, div#ppm-sidemenu {
     margin-top: 10px !important;
 }
-div#header,
-div.box h2,
-div.box div.tabs,
-div#top-menu-notifications-list h2 {
-    border-radius: 7px 7px 0 0;
-    -moz-border-radius: 7px 7px 0 0;
-    -webkit-border-radius: 7px 7px 0 0;
-    color: white;
-}
+
 
 div.box h2 {
     margin: -10px -10px 10px;
     padding: 5px 5px 5px 10px;
 }
 
-div.box {
-    margin: 0 0 15px;
-    padding: 10px;
-    overflow-wrap: break-word;
-}
-
-h3,
-strong {
-    color: white;
-}
-
-
-div#header-commands {
-    margin: 10px 22px 0 0;
-    float: right;
-}
 
 a {
     color: #501111;
@@ -116,86 +116,8 @@ a {
 div.avatar,
 div.avatar_clean {
     background-size: 100% !important;
-}
-
-div.avatar {
-    float: left;
-    margin-right: 10px;
-}
-
-div.avatar,
-div.avatar_clean {
     height: 120px;
     width: 120px;
-}
-
-div#header-logo img {
-    margin: -15px 0 0 222px;
-}
-
-div#detachable {
-    width: 775px;
-    position: static;
-}
-
-div#header-side-commands {
-    display: none;
-    position: relative;
-    left: 15px;
-    top: 1px;
-    width: 25px;
-    float: right;
-    margin-left: -40px;
-}
-
-div#character-tools {
-    /*background-image: url(Images/bgr-character-tools.png);*/
-}
-
-div#ppm-detachable-shadow {
-    width: 775px;
-    position: static;
-    display: none;
-}
-
-
-html,
-input,
-select,
-textarea {
-    font-family: "Lucida Grande", Verdana, Sans-Serif;
-    font-size: 11px;
-}
-
-div#ppm-wrapper {
-    margin: 30px auto 0;
-    width: 775px;
-    top: 50%;
-}
-
-div {
-    display: block;
-}
-
-html,
-input,
-select,
-textarea {
-    font-family: "Lucida Grande", Verdana, Sans-Serif;
-    font-size: 11px;
-}
-
-div#detachable {
-    width: 775px;
-    position: static;
-}
-
-div#top-menu {
-    height: 32px;
-    margin-top: 15%;
-    box-shadow: inset 0px 0px 10px rgba(255, 225, 154, 0.5);
-    background-color: grey;
-    z-index: 9999;
 }
 
 div#top-menu-nav {
@@ -211,48 +133,13 @@ div#top-menu-nav {
     font-size: 11px !important;
 }
 
-div#top-menu-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 9px 0 0 0;
-    text-align: center;
-}
-
-ul,
-menu,
-dir {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
-
-div#top-menu-nav ul li {
-    display: inline;
-}
-
-ul li {
-    list-style-type: disc;
-    margin: 0 0 5px;
-    padding: 0;
-}
-
 div#ppm-content {
     margin: 0 0 0 25px;
     float: left;
     width: 489px;
 }
 
-div.box,
-table.data tr.even td,
-div.editor a.button:hover {
-    background: #eee;
-}
-
 div.content p {
-    margin: 0 0 15px;
     padding: 0 10px;
 }
 
@@ -264,12 +151,23 @@ div.signupBox {
     background-size: cover !important;
     border-radius: 30px;
 }
-div.noteheader, div.avatarMaker, div#header, div.box h2, div.box div.tabs, div#top-menu-notifications-list h2{
+div.noteheader,
+div.avatarMaker,
+div#header,
+div.box h2,
+div.box div.tabs,
+div#top-menu-notifications-list h2,
+div#sub-header {
     border-radius: 7px 7px 0 0;
     -moz-border-radius: 7px 7px 0 0;
     -webkit-border-radius: 7px 7px 0 0;
 }
-.StartImage, input.round, select.round {
+.StartImage,
+input.round,
+select.round,
+input[type=submit],
+input[type=button],
+button {
     border-radius: 7px !important;
     -moz-border-radius: 7px !important;
     -webkit-border-radius: 7px !important;
@@ -280,15 +178,13 @@ input.round {
     padding: 3px;
 }
 input[type=submit], input[type=button] {
-    border-radius: 7px !important;
-    -moz-border-radius: 7px !important;
-    -webkit-border-radius: 7px !important;
     padding: 2px 5px;
     border: 1px solid #999;
 }
-input[type=submit]:hover, input[type=button]:hover {
+input[type=submit]:hover,
+input[type=button]:hover,
+button.nightlife:hover {
     background-color: #501111;
-    color: white;
 }
 table.data.quest, table.data.nightclub{
     float: left;
@@ -313,24 +209,13 @@ table.data.quest, table.data.nightclub{
 .width49 {
     width: 49%!important;
 }
-.ofauto {
-    overflow: auto;
-}
-div#headbar ul li {
-    display: inline;
-}
+
 div#sub-header {
     background: #484143;
     height: 65px;
-    border-radius: 7px 7px 0 0;
-    -moz-border-radius: 7px 7px 0 0;
-    -webkit-border-radius: 7px 7px 0 0;
 }
 div#ppm-bottom-spacer {
     height: 50px;
-}
-.clear {
-    clear: both;
 }
 
 .center {
@@ -354,40 +239,6 @@ div#headbar ul {
     text-align: center;
 }
 
-div.charMainToolbox {
-    float: left;
-    width: 25%;
-    margin-right: 15px !important;
-}
-
-div.charMainValues {
-    float: left;
-    width: 30%;
-    margin-right: 20px !important;
-}
-
-div.charMainInfo {
-    float: left;
-    width: 35%;
-    margin-right: 0 !important;
-}
-
-.clear {
-    clear: both;
-}
-
-div.box,
-table.data tr.even td,
-div.editor a.button:hover {
-    background: rgba(80, 80, 80, 0.65);
-}body {
-     background: #1b1819 url(/static/assets/images/city_background.jpg) repeat-x;
- }
-
-div#topcolumn {
-    margin: 0 25px;
-}
-
 div.StartImage {
     background: url("https://wallpapercave.com/wp/wp2777563.jpg") no-repeat;
     height: 300px;
@@ -395,36 +246,6 @@ div.StartImage {
     background-size: cover;
 }
 
-div#header img.logo,
-div.gameimage,
-div#headermenu,
-div.forumMessageHeader {
-    margin-bottom: 15px;
-}
-
-form {
-    display: block;
-    margin-top: 0em;
-}
-
-div#header-logo img {
-    margin: -15px 0 0 222px;
-}
-
-div#header,
-div.box h2,
-div.box div.tabs,
-div#top-menu-notifications-list h2 {
-    border-radius: 7px 7px 0 0;
-    -moz-border-radius: 7px 7px 0 0;
-    -webkit-border-radius: 7px 7px 0 0;
-    color: white;
-}
-
-h3,
-strong {
-    color: white;
-}
 
 
 div#header {
@@ -436,20 +257,8 @@ div#header-commands {
     float: right;
 }
 
-li {
-    color: white;
-}
-
-span.em {
-    color: white;
-}
-
 .stat {
     color: #501111 !important;
-}
-div.avatar,
-div.avatar_clean {
-    background-size: 100% !important;
 }
 
 div.avatar {
@@ -503,9 +312,7 @@ textarea {
     font-family: "Lucida Grande", Verdana, Sans-Serif;
     font-size: 11px;
 }
-h1, h2 {
-    color: white;
-}
+
 #headbar {
     font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
     height: 32px;
@@ -534,22 +341,6 @@ div#ppm-wrapper {
     top: 50%;
 }
 
-div {
-    display: block;
-}
-
-html,
-input,
-select,
-textarea {
-    font-family: "Lucida Grande", Verdana, Sans-Serif;
-    font-size: 11px;
-}
-
-div#detachable {
-    width: 775px;
-    position: static;
-}
 
 div#top-menu {
     height: 32px;
@@ -557,12 +348,6 @@ div#top-menu {
     box-shadow: inset 0px 0px 10px rgba(255, 225, 154, 0.5);
     background-color: #2c2225;
     z-index: 9999;
-}
-
-div#top-menu-nav {
-    float: left;
-    width: 670px;
-    height: 32px;
 }
 
 div#top-menu-nav ul {
@@ -575,14 +360,14 @@ div#top-menu-nav ul {
 ul,
 menu,
 dir {
-    display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
 }
 
-div#top-menu-nav ul li {
+div#top-menu-nav ul li,
+div#headbar ul li {
     display: inline;
 }
 
@@ -595,33 +380,17 @@ ul li {
 
 div#ppm-main {
     background-color: #564d4f;
-}
-
-div#ppm-main {
     clear: both;
     overflow: auto;
     margin: 0;
 }
 
-div#ppm-content {
-    margin: 0 0 0 25px;
-    float: left;
-    width: 489px;
-}
-
-div.box,
-table.data tr.even td,
-div.editor a.button:hover {
-    background: #eee;
-}
 div.box h2 {
-    font-size: 12px;
     background-color: #484143;
     background-repeat: repeat-x;
     color: #fff;
     font-weight: 500;
 }
-
 
 .ofauto {
     overflow: auto;
@@ -650,21 +419,15 @@ div.charMainInfo {
 }
 
 div.box {
-    margin: 0 0 15px;
     padding: 10px;
     overflow-wrap: break-word;
 }
 
 div.box,
 table.data tr.even td,
-div.editor a.button:hover {
-    background: #87777c;
-}
-
+div.editor a.button:hover,
 div#ppm-sidemenu {
-    margin: 0 25px 0 0;
-    float: right;
-    width: 220px;
+    background: #87777c;
 }
 
 div#ppm-sidemenu {
@@ -681,14 +444,8 @@ td > p {
 }
 
 button {
-    border-radius: 7px !important;
-    -moz-border-radius: 7px !important;
-    -webkit-border-radius: 7px !important;
     padding: 2px 5px;
     border: 1px solid #999;
-}
-
-button {
     background-color: #fafafa;
 }
 
@@ -697,9 +454,4 @@ button.nightlife {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 5px;
-}
-
-button.nightlife:hover {
-    background-color: #501111;
-    color: white;
 }

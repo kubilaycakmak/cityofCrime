@@ -10,110 +10,16 @@
 
 <body data-gr-c-s-loaded="true" style="">
     <form name="javaForm" method="post" action="./Character" id="javaForm">
-        <div id="header" role="banner">
-            <div id="headbar" class="cityofcrime" style="display: block;">
-                <ul>
-                    <form method="post">
-                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
-                        </li>
-                        <li><input class="input-nav" formaction="/user" type="submit" value="Character"
-                                name="character">
-                        </li>
-                        <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
-                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout">
-                        </li>
-                    </form>
-                </ul>
-            </div>
-        </div>
-        </div>
-        <div id="ppm-wrapper">
-            <div id="sub-header" role="banner">
+        <div th:replace="fragments/headbar :: copy"></div>
 
-                <div id="header-logo">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true"
-                        style="position: relative; left: -20;">
-                </div>
-            </div>
+        <div id="ppm-wrapper">
+            <div th:replace="fragments/subheader :: copy"></div>
+
             <div id="ppm-main">
                 <div id="ppm-content" role="main" class="content">
-                    <div class="box ofauto charPresBox">
-                        <div id="karakter_basarilari" class="characterAchievements">
-                            <div title="achv1" class="Achievement Achievement_196"></div>
-                            <div title="achv2" class="Achievement Achievement_254"></div>
-                        </div>
-                        <h2 th:text="${session.user.firstName +' '+ session.user.lastName}"></h2>
-                        <div class="avatar pointer idTrigger"
-                            style="background: url('https://shmector.com/_ph/4/275274558.png') no-repeat;"
-                            onclick="window.location.href='';">
-                            <div class="idHolder" style="display: none;"></div>
-                        </div>
-                        <div class="float_left characterPresentation">
-                            <p>
-                                    <strong th:text="${session.user.username}"></strong> is a
-                                    <strong>
-                                        <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
-                                        <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
-                                        <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
-                                    </strong>
-                                    and is located in
-                                    <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
-                            </p>
-                            <p><strong>Widmore</strong> likes to
-                                <strong>
-                                    <span>Street meetings</span>
+                    <div th:replace="fragments/character :: copy"></div>
 
-
-                                </strong>
-                                during off hours and
-                                is trying to <strong>improve skills</strong>
-                                in order to get ahead professionally.</p>
-
-                            <div class="tb nobmargin" id="ctl00_cphLeftColumn_ctl02_tbxStatement">
-                                <div class="tbc tbcw">
-                                    <span class="em">I guess I have to say something cool...</span>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div id="stats">
-                                <table align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td>Stamina:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.stamina}">100</td>
-                                            <td>Respect:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
-                                            <td>Money:</td>
-                                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Experience:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
-                                            <td>Intelligence:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100
-                                            </td>
-                                            <td>Strength:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tolerance:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.tolerance}">100</td>
-                                            <td>Charisma:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.charisma}">100</td>
-                                            <td>Power:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.power}">100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Credit:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="robbery">
+                    <div id="quests">
                         <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
                             width="212px" height="140px">
                         <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
@@ -127,25 +33,8 @@
 
 
                 </div>
-                <div id="ppm-sidemenu" role="navigation">
-                    <div class="box">
-                        <div class="menu">
-                            <h3 class="menu">Menu</h3>
-                            <ul>
-                                <li><a href="robbery">Robbery</a></li>
-                                <li><a href="nightlife">Nightlife</a></li>
-                                <!-- buraya dp kısmına biz ayar çekicez -->
-                                <li><a href="quests">Quests</a></li>
-                                <li><a href="equipment">Equipment</a></li>
-                                <li ><a href="buildings">Buildings</a></li>
-                                <li><a href="bank">Bank</a></li>
-                                <li><a href="hospital">Hospital</a></li>
-                                <li><a href="casino">Casino</a></li>
-                                <li ><a href="prison">Prison</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div th:replace="fragments/sidemenu :: copy"></div>
+
                 <div>
                     <h2 th:text="${#session.getAttribute('job')}"></h2>
                 </div>
@@ -170,11 +59,8 @@
                         </tbody>
                     </table>
             </div>
-            <div class="clear center" style="background-color: #564d4f;">
-                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                    style="position: relative; left: -20;">
-            </div>
-            <div id="ppm-footer"></div>
+            <div th:replace="fragments/footer :: copy"></div>
+
         </div>
         <div id="ppm-bottom-spacer"></div>
         </div>

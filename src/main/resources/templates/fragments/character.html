@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="copy" class="box ofauto charPresBox">
+        <div id="karakter_basarilari" class="characterAchievements">
+            <div title="achv1" class="Achievement Achievement_196"></div>
+            <div title="achv2" class="Achievement Achievement_254"></div>
+        </div>
+        <h2 th:text="${session.user.firstName +' '+ session.user.lastName}"></h2>
+        <div class="avatar pointer idTrigger"
+            style="background: url('https://shmector.com/_ph/4/275274558.png') no-repeat;"
+            onclick="window.location.href='';">
+            <div class="idHolder" style="display: none;"></div>
+        </div>
+        <div class="float_left characterPresentation">
+            <p>
+                <strong th:text="${session.user.username}"></strong> is a
+                <strong>
+                    <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
+                    <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
+                    <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
+                </strong>
+                and is located in
+                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
+            </p>
+            <p><strong th:text="${session.user.username}"></strong> likes to
+                <strong>
+                    <span th:if="${session.user.userCharacter.type == 1}">Street meetings</span>
+                    <span th:if="${session.user.userCharacter.type == 2}">Targets</span>
+                    <span th:if="${session.user.userCharacter.type == 3}">Deals</span>
+                </strong>
+                during off hours and
+                is trying to <strong>improve skills</strong>
+                in order to get ahead professionally.</p>
+
+            <div class="tb nobmargin" id="ctl00_cphLeftColumn_ctl02_tbxStatement">
+                <div class="tbc tbcw">
+                    <span class="em">I guess I have to say something cool...</span>
+                </div>
+            </div>
+            <br></br>
+            <div id="stats">
+                <table align="center">
+                    <tbody>
+                        <tr>
+                            <td>Stamina:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.stamina}">100</td>
+                            <td>Respect:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
+                            <td>Money:</td>
+                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100</td>
+                        </tr>
+                        <tr>
+                            <td>Experience:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
+                            <td>Intelligence:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                            <td>Strength:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
+                        </tr>
+                        <tr>
+                            <td>Tolerance:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.tolerance}">100</td>
+                            <td>Charisma:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.charisma}">100</td>
+                            <td>Power:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.power}">100</td>
+                        </tr>
+                        <tr>
+                            <td>Credit:</td>
+                            <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

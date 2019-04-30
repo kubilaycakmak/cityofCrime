@@ -10,24 +10,11 @@
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
-    <div id="header" role="banner">
-        <div id="headbar" class="cityofcrime" style="display: block;">
-            <ul>
-                <li><a href="">Welcome</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Help</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-    <div id="ppm-wrapper">
-        <div id="sub-header" role="banner">
+    <div th:replace="fragments/headbar :: copy"></div>
 
-            <div id="header-logo">
-                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/logo.png?raw=true"
-                    style="position: relative; left: -20;">
-            </div>
-        </div>
+    <div id="ppm-wrapper">
+        <div th:replace="fragments/subheader :: copy"></div>
+
         <div id="ppm-main">
             <div id="topcolumn">
                 <div class="StartImage gameimage"></div>
@@ -111,11 +98,8 @@
                 </div>
             </div>
         </div>
-        <div class="clear center" style="background-color: #564d4f;">
-            <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                style="position: relative; left: -20;">
-        </div>
-        <div id="ppm-footer"></div>
+        <div th:replace="fragments/footer :: copy"></div>
+
     </div>
     <div id="ppm-bottom-spacer"></div>
 </body>
