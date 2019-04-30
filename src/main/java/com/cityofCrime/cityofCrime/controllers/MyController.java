@@ -1,10 +1,10 @@
 package com.cityofCrime.cityofCrime.controllers;
 
 import com.cityofCrime.cityofCrime.models.User;
+import com.cityofCrime.cityofCrime.models.UserCharacter;
 import com.cityofCrime.cityofCrime.utils.Query;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -102,62 +102,15 @@ public class MyController {
         return "prison";
     }
 
-    @RequestMapping("/nightlife/nightclub")
+    @RequestMapping(value = "/nightclub", method = RequestMethod.POST)
     public String getNightclub(HttpServletRequest request) {
-        session = request.getSession();
-        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-        return "nightlife/nightclub";
+        int money = 20;
+        query = Query.getQuery();
+        String email = request.getParameter("email");
+        user.getUserCharacter().setMoney(user.getUserCharacter().getMoney()-money);
+        session.setAttribute("user",query.getUser(email));
+        return "nightclub";
     }
-
-    // @RequestMapping("/quest")
-    // public String getQuest(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "quest";
-    // }
-
-    // @RequestMapping("/equipment")
-    // public String getEquipment(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "equipment";
-    // }
-
-    // @RequestMapping("/buildings")
-    // public String getBuildings(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "buildings";
-    // }
-
-    // @RequestMapping("/bank")
-    // public String getBank(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "bank";
-    // }
-
-    // @RequestMapping("/hospital")
-    // public String getHospital(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "hospital";
-    // }
-
-    // @RequestMapping("/casino")
-    // public String getCasino(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "casino";
-    // }
-
-    // @RequestMapping("/prison")
-    // public String getPrison(HttpServletRequest request) {
-    //     session = request.getSession();
-    //     session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
-    //     return "prison";
-    // }
-
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String callLogin() {
@@ -165,7 +118,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String getLogin(HttpServletRequest request, Model model) {
+    public String getLogin(HttpServletRequest request) {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         query = Query.getQuery();

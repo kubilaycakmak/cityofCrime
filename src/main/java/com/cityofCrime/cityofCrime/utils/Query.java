@@ -52,6 +52,7 @@ public class Query{
         return users.get(0);
     }
 
+
     public boolean doRobbery(String choose, String email){
         boolean check = false;
         int stamina = 0;
