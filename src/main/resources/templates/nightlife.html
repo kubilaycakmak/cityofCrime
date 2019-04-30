@@ -13,10 +13,13 @@
             <div id="headbar" class="cityofcrime" style="display: block;">
                 <ul>
                     <form method="post">
-                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
-                        <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character"></li>
+                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
+                        </li>
+                        <li><input class="input-nav" formaction="/user" type="submit" value="Character"
+                                name="character"></li>
                         <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
-                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
+                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout">
+                        </li>
                     </form>
                 </ul>
             </div>
@@ -85,7 +88,8 @@
                                             <td>Experience:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
                                             <td>Intelligence:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100
+                                            </td>
                                             <td>Strength:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
                                         </tr>
@@ -108,49 +112,179 @@
                     </div>
 
                     <div id="robbery">
-                        <img src="https://www.phoenixcriminaldefense.com/wp-content/uploads/2018/05/robbery_theft.jpg"
-                            width="212px" height="140px">
-                        <p>Rumor says that the perfect crime is to stab someone with an icice. Self-destructing
-                            evidence...
-                            Make it fast and clean then maybe you will get away with some fresh dineros.
-                            Some crimes are too hard to handle by your own, to succeed you will need help from your crew
-                            in the mob.
-                            You will discover more and harder robberies after completing new levels!</p>
+                        <img src="https://api3.goingapp.pl/image/permanent/3f56379e34b58fb36131ce5aebe25115.jpg"
+                            width="212px" height="175px">
+                        <p>You can feel the pulsating bass in your stomach just being outside. But why stay outside when
+                            you can get inside, get to know some freaks.
+                            Why drink and drive when you can smoke and fly?
+                        </p>
+                        <p>It always cost 1 ticket to enter your own rave, even if you don't take any drugs or meet
+                            anyone. </p>
+                        <p>Please note! If you use multiple browser tabs or browser windows open you might get kicked
+                            from the nightclub.</p>
                     </div>
                     <div class="clear"></div>
                 </div>
+
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
                         <div class="menu">
                             <h3 class="menu">Menu</h3>
                             <ul>
-                                <li id="mnuToolTipFocus"><a href="http://localhost:8080/robbery">Robbery</a></li>
-                                <li id="mnuToolTipImproveCharacter"><a href="">Nightlife</a></li>
-                                <!-- buraya dp kısmına biz ayar çekicez -->
-                                <li><a href="">Quests</a></li>
-                                <li><a href="">Equipment</a></li>
-                                <li id="mnuToolTipSongs"><a href="">Buildings</a></li>
-                                <li><a href="">Bank</a></li>
-
-                                <li><a href="">Hospital</a></li>
-
-                                <li><a href="">Casino</a></li>
-
-
-                                <li id="mnuToolTipPersonality"><a href="">Prison</a></li>
+                                <li><a href="robbery">Robbery</a></li>
+                                <li><a href="nightlife">Nightlife</a></li>
+                                <li><a href="quests">Quests</a></li>
+                                <li><a href="equipment">Equipment</a></li>
+                                <li><a href="buildings">Buildings</a></li>
+                                <li><a href="bank">Bank</a></li>
+                                <li><a href="hospital">Hospital</a></li>
+                                <li><a href="casino">Casino</a></li>
+                                <li><a href="prison">Prison</a></li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
+                <table class="data">
+                    <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Prozak 2.0</th>
+                        </tr>
+
+
+
+                        <tr class="even">
+                            <td>Price:
+                            </td>
+                            <td>
+                                <p>$20</p>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                Max Respect:
+                            </td>
+                            <td>
+                                <p>200</p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td></td>
+
+                            <td><button type="button" id="prozak" class="nightlife">GO!</button></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+                <table class="data">
+                    <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Teatr Cubano</th>
+                        </tr>
+
+
+
+                        <tr class="even">
+                            <td>Price:
+                            </td>
+                            <td>
+                                <p>$20</p>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                Max Respect:
+                            </td>
+                            <td>
+                                <p>200</p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td></td>
+
+                            <td><button type="button" id="teatr-cubano" class="nightlife">GO!</button></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+                <table class="data">
+                    <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Frantic</th>
+                        </tr>
+
+
+
+                        <tr class="even">
+                            <td>Price:
+                            </td>
+                            <td>
+                                <p>$20</p>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                Max Respect:
+                            </td>
+                            <td>
+                                <p>200</p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td></td>
+
+                            <td><button type="button" id="frantic" class="nightlife">GO!</button></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+                <table class="data">
+                    <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Shakers</th>
+                        </tr>
+
+
+
+                        <tr class="even">
+                            <td>Price:
+                            </td>
+                            <td>
+                                <p>$20</p>
+                            </td>
+                        </tr>
+                        <tr class="even">
+                            <td>
+                                Max Respect:
+                            </td>
+                            <td>
+                                <p>200</p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td></td>
+
+                            <td><button type="button" id="shakers" class="nightlife">GO!</button></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
             </div>
             <div class="clear center" style="background-color: #564d4f;">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                        style="position: relative; left: -20;">
-                </div>
-                <div id="ppm-footer"></div>
+                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
+                    style="position: relative; left: -20;">
             </div>
-            <div id="ppm-bottom-spacer"></div>
+            <div id="ppm-footer"></div>
+        </div>
+        <div id="ppm-bottom-spacer"></div>
         </div>
     </form>
 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <script type="text/javascript" th:src="@{/script/robbery.js}"></script>
 </head>
 
 <body data-gr-c-s-loaded="true" style="">
@@ -13,10 +14,14 @@
             <div id="headbar" class="cityofcrime" style="display: block;">
                 <ul>
                     <form method="post">
-                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
-                        <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character"></li>
+                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
+                        </li>
+                        <li><input class="input-nav" formaction="/user" type="submit" value="Character"
+                                name="character">
+                        </li>
                         <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
-                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
+                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout">
+                        </li>
                     </form>
                 </ul>
             </div>
@@ -45,20 +50,20 @@
                         </div>
                         <div class="float_left characterPresentation">
                             <p>
-                                <strong th:text="${session.user.username}"></strong> is a
-                                <strong>
-                                    <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
-                                    <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
-                                    <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
-                                </strong>
-                                and is located in
-                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
+                                    <strong th:text="${session.user.username}"></strong> is a
+                                    <strong>
+                                        <span th:if="${session.user.userCharacter.type == 1}">Gangster</span>
+                                        <span th:if="${session.user.userCharacter.type == 2}">Assassin</span>
+                                        <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
+                                    </strong>
+                                    and is located in
+                                    <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
                             </p>
-                            <p><strong th:text="${session.user.username}"></strong> likes to
+                            <p><strong>Widmore</strong> likes to
                                 <strong>
-                                    <span th:if="${session.user.userCharacter.type == 1}">Street meetings</span>
-                                    <span th:if="${session.user.userCharacter.type == 2}">Targets</span>
-                                    <span th:if="${session.user.userCharacter.type == 3}">Deals</span>
+                                    <span>Street meetings</span>
+
+
                                 </strong>
                                 during off hours and
                                 is trying to <strong>improve skills</strong>
@@ -69,7 +74,7 @@
                                     <span class="em">I guess I have to say something cool...</span>
                                 </div>
                             </div>
-                            <br></br>
+                            <br><br>
                             <div id="stats">
                                 <table align="center">
                                     <tbody>
@@ -79,13 +84,15 @@
                                             <td>Respect:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
                                             <td>Money:</td>
-                                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100</td>
+                                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Experience:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
                                             <td>Intelligence:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100
+                                            </td>
                                             <td>Strength:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
                                         </tr>
@@ -106,58 +113,69 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="bank">
+                        <img src="https://motwebmediastg01.blob.core.windows.net/nop-thumbs-images/0004360_arava_493.jpeg"
+                            width="212px" height="140px">
+                        <p>Welcome to the City Bank. Place your cash with us and we give you interest rate on your money!</p> 
+                        <p> You will get 2% per 168 days.</p>
+                    </div>
                     <div class="clear"></div>
-                    <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
-                        <h2>Recent diary entries</h2>
-                        <ul class="noheader diaryExtraspace">
-                            <!-- alt satırlarda dinamik -->
-                            <li>I failed to rob a store. I definitely need some help at this.</li>
-                        </ul>
-                    </div>
-                    <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
-                        <h2>Hot Trace</h2>
-                        <p>These are your five last whereabouts, as far as you can tell. Only you can see this
-                            information.</p>
-                        <ul>
-                            <li>14.10.2017, 21:18: <a href="">Helsinki Hotel</a></li> <!-- burasıda dinamik olacak -->
-                        </ul>
-                    </div>
-                    <div class="box">
-                        <h2>
-                            Prominent Clothes & Tattoos</h2>
-                        <p>Joni-Petteri isn't wearing anything that covers his private parts.</p>
-                        <!-- burayı yine veri olarak çekicez -->
-                    </div>
+
+
                 </div>
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
                         <div class="menu">
                             <h3 class="menu">Menu</h3>
                             <ul>
-                                <li ><a href="robbery">Robbery</a></li>
+                                <li><a href="robbery">Robbery</a></li>
                                 <li><a href="nightlife">Nightlife</a></li>
+                                <!-- buraya dp kısmına biz ayar çekicez -->
                                 <li><a href="quests">Quests</a></li>
                                 <li><a href="equipment">Equipment</a></li>
-                                <li><a href="buildings">Buildings</a></li>
+                                <li ><a href="buildings">Buildings</a></li>
                                 <li><a href="bank">Bank</a></li>
                                 <li><a href="hospital">Hospital</a></li>
                                 <li><a href="casino">Casino</a></li>
-                                <li><a href="">Prison</a></li>
+                                <li ><a href="prison">Prison</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2 th:text="${#session.getAttribute('job')}"></h2>
+                </div>
+                <table class="data quest">
+                        <tbody class="data-tbody">
+                            <tr>
+                                <th colspan="2" class="single">Prospect</th>
+                            </tr>
+    
+    
+    
+                            <tr class="even">
+                                <td>Fresh meat, you want to be a champ? Let me show you few tricks that might help you become a Godfather of this world.
+                                </td>
+                            </tr>
+                            <tr class="odd">    
+                                <td><button type="button" id="shakers" class="nightlife">Start</button></td>
+                            </tr>
+    
+    
+    
+                        </tbody>
+                    </table>
             </div>
             <div class="clear center" style="background-color: #564d4f;">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                        style="position: relative; left: -20;">
-                </div>
-                <div id="ppm-footer"></div>
+                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
+                    style="position: relative; left: -20;">
             </div>
-            <div id="ppm-bottom-spacer"></div>
+            <div id="ppm-footer"></div>
+        </div>
+        <div id="ppm-bottom-spacer"></div>
         </div>
     </form>
+
 
 </body>
 

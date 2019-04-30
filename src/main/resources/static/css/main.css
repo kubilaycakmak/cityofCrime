@@ -38,6 +38,13 @@ form {
 table.data tbody tr td {
     font-size: 12px;
 }
+div.Error {
+    background: url("https://media.tenor.com/images/ce3659cacf44c748cb1e120b2c31cdfb/tenor.gif") 170px 0 no-repeat;
+    height: 474px;
+    width: 714px;
+    margin-left: -45px;
+    background-size: contain;
+}
 table.data {
     border: 1px solid #87777c;
     border-spacing: 0;
@@ -280,7 +287,16 @@ input[type=submit], input[type=button] {
     border: 1px solid #999;
 }
 input[type=submit]:hover, input[type=button]:hover {
-    background-color: #fafafa;
+    background-color: #501111;
+    color: white;
+}
+table.data.quest, table.data.nightclub{
+    float: left;
+    width: 95%;
+    margin-left: 25px;
+}
+#buyDrink {
+    margin-left: -10px;
 }
 .right {
     text-align: right!important;
@@ -659,4 +675,31 @@ div#ppm-sidemenu {
 
 td > p {
     color: #501111;
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+button {
+    border-radius: 7px !important;
+    -moz-border-radius: 7px !important;
+    -webkit-border-radius: 7px !important;
+    padding: 2px 5px;
+    border: 1px solid #999;
+}
+
+button {
+    background-color: #fafafa;
+}
+
+button.nightlife {
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+button.nightlife:hover {
+    background-color: #501111;
+    color: white;
 }

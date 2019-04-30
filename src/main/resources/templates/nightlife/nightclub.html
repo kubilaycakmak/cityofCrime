@@ -13,10 +13,13 @@
             <div id="headbar" class="cityofcrime" style="display: block;">
                 <ul>
                     <form method="post">
-                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome"></li>
-                        <li><input class="input-nav" formaction="/user" type="submit" value="Character" name="character"></li>
+                        <li><input class="input-nav" formaction="/home" type="submit" value="Welcome" name="welcome">
+                        </li>
+                        <li><input class="input-nav" formaction="/user" type="submit" value="Character"
+                                name="character"></li>
                         <li><input class="input-nav" formaction="/help" type="submit" value="Help" name="help"></li>
-                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout"></li>
+                        <li><input class="input-nav" formaction="/logout" type="submit" value="Logout" name="logout">
+                        </li>
                     </form>
                 </ul>
             </div>
@@ -52,7 +55,7 @@
                                     <span th:if="${session.user.userCharacter.type == 3}">Dealer</span>
                                 </strong>
                                 and is located in
-                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>
+                                <a href="">Helsinki</a>, at <a href="">Hietaniemen hautausmaa</a>.
                             </p>
                             <p><strong th:text="${session.user.username}"></strong> likes to
                                 <strong>
@@ -79,13 +82,14 @@
                                             <td>Respect:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.respect}">100</td>
                                             <td>Money:</td>
-                                            <td class="stat" th:text="${'$' + session.user.userCharacter.money}"> 100</td>
+                                            <td class="stat" th:text="${session.user.userCharacter.money}"> 100</td>
                                         </tr>
                                         <tr>
                                             <td>Experience:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.experience}">100</td>
                                             <td>Intelligence:</td>
-                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100</td>
+                                            <td class="stat" th:text="${session.user.userCharacter.intelligence}">100
+                                            </td>
                                             <td>Strength:</td>
                                             <td class="stat" th:text="${session.user.userCharacter.strength}">100</td>
                                         </tr>
@@ -107,35 +111,27 @@
                         </div>
                     </div>
 
+                    <div id="robbery">
+                        <img src="https://api3.goingapp.pl/image/permanent/3f56379e34b58fb36131ce5aebe25115.jpg"
+                            width="212px" height="175px">
+                        <p>You can feel the pulsating bass in your stomach just being outside. But why stay outside when
+                            you can get inside, get to know some freaks.
+                            Why drink and drive when you can smoke and fly?
+                        </p>
+                        <p>It always cost 1 ticket to enter your own rave, even if you don't take any drugs or meet
+                            anyone. </p>
+                        <p>Please note! If you use multiple browser tabs or browser windows open you might get kicked
+                            from the nightclub.</p>
+                    </div>
                     <div class="clear"></div>
-                    <div id="ctl00_cphLeftColumn_ctl00_divRecentEvents" class="box">
-                        <h2>Recent diary entries</h2>
-                        <ul class="noheader diaryExtraspace">
-                            <!-- alt satırlarda dinamik -->
-                            <li>I failed to rob a store. I definitely need some help at this.</li>
-                        </ul>
-                    </div>
-                    <div id="ctl00_cphLeftColumn_ctl00_pnlHotTrace" class="box">
-                        <h2>Hot Trace</h2>
-                        <p>These are your five last whereabouts, as far as you can tell. Only you can see this
-                            information.</p>
-                        <ul>
-                            <li>14.10.2017, 21:18: <a href="">Helsinki Hotel</a></li> <!-- burasıda dinamik olacak -->
-                        </ul>
-                    </div>
-                    <div class="box">
-                        <h2>
-                            Prominent Clothes & Tattoos</h2>
-                        <p>Joni-Petteri isn't wearing anything that covers his private parts.</p>
-                        <!-- burayı yine veri olarak çekicez -->
-                    </div>
                 </div>
+
                 <div id="ppm-sidemenu" role="navigation">
                     <div class="box">
                         <div class="menu">
                             <h3 class="menu">Menu</h3>
                             <ul>
-                                <li ><a href="robbery">Robbery</a></li>
+                                <li><a href="robbery">Robbery</a></li>
                                 <li><a href="nightlife">Nightlife</a></li>
                                 <li><a href="quests">Quests</a></li>
                                 <li><a href="equipment">Equipment</a></li>
@@ -143,19 +139,90 @@
                                 <li><a href="bank">Bank</a></li>
                                 <li><a href="hospital">Hospital</a></li>
                                 <li><a href="casino">Casino</a></li>
-                                <li><a href="">Prison</a></li>
+                                <li><a href="prison">Prison</a></li>
+
                             </ul>
                         </div>
                     </div>
                 </div>
+                <table class="data nightclub">
+                    <tbody class="data-tbody">
+                        <tr>
+                            <th colspan="2" class="single">Prozak 2.0</th>
+                        </tr>
+                        <tr class="even">
+                            <td>Painkillers:</td>
+                            <td>
+                                <p>1%</p>
+                            </td>
+                            <td>
+                                <p>$3</p>
+                            </td>
+                            <td>
+                                <p>-Amount-</p>
+                            </td>
+                            <td>
+                                <p><button id="buyDrink">Buy</button></p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Painkillers:</td>
+                            <td>
+                                <p>1%</p>
+                            </td>
+                            <td>
+                                <p>$3</p>
+                            </td>
+                            <td>
+                                <p>-Amount-</p>
+                            </td>
+                            <td>
+                                <p><button id="buyDrink">Buy</button></p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Painkillers:</td>
+                            <td>
+                                <p>1%</p>
+                            </td>
+                            <td>
+                                <p>$3</p>
+                            </td>
+                            <td>
+                                <p>-Amount-</p>
+                            </td>
+                            <td>
+                                <p><button id="buyDrink">Buy</button></p>
+                            </td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Painkillers:</td>
+                            <td>
+                                <p>1%</p>
+                            </td>
+                            <td>
+                                <p>$3</p>
+                            </td>
+                            <td>
+                                <p>-Amount-</p>
+                            </td>
+                            <td>
+                                <p><button id="buyDrink">Buy</button></p>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
             </div>
             <div class="clear center" style="background-color: #564d4f;">
-                    <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
-                        style="position: relative; left: -20;">
-                </div>
-                <div id="ppm-footer"></div>
+                <img src="https://github.com/kubilayckmk/cityofCrime/blob/master/jarcoding.png?raw=true"
+                    style="position: relative; left: -20;">
             </div>
-            <div id="ppm-bottom-spacer"></div>
+            <div id="ppm-footer"></div>
+        </div>
+        <div id="ppm-bottom-spacer"></div>
         </div>
     </form>
 

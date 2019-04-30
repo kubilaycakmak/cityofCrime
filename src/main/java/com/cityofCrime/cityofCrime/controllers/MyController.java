@@ -2,13 +2,12 @@ package com.cityofCrime.cityofCrime.controllers;
 
 import com.cityofCrime.cityofCrime.models.User;
 import com.cityofCrime.cityofCrime.utils.Query;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,10 +18,6 @@ public class MyController {
     Query query;
     HttpSession session;
 
-    @RequestMapping("/*")
-    public String get404() {
-        return "404";
-    }
 
     @RequestMapping(value = {"/register", "/"}, method = RequestMethod.POST)
     public String getRegister(HttpServletRequest request) {
@@ -56,6 +51,62 @@ public class MyController {
         session = request.getSession();
         session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
         return "nightlife";
+    }
+
+    @RequestMapping("/quests")
+    public String getQuests(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "quests";
+    }
+
+    @RequestMapping("/equipment")
+    public String getEquipment(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "equipment";
+    }
+
+    @RequestMapping("/buildings")
+    public String getBuildings(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "buildings";
+    }
+
+    @RequestMapping("/bank")
+    public String getBank(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "bank";
+    }
+
+    @RequestMapping("/hospital")
+    public String getHospital(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "hospital";
+    }
+
+    @RequestMapping("/casino")
+    public String getCasino(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "casino";
+    }
+
+    @RequestMapping("/prison")
+    public String getPrison(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "prison";
+    }
+
+    @RequestMapping("/nightlife/nightclub")
+    public String getNightclub(HttpServletRequest request) {
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "nightlife/nightclub";
     }
 
     // @RequestMapping("/quest")
@@ -166,4 +217,5 @@ public class MyController {
         return "robbery";
     }
 
+    
 }
