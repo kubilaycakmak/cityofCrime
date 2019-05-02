@@ -112,10 +112,10 @@ public class MyController {
         return "nightclub";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String callLogin() {
-        return "register";
-    }
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public String callLogin() {
+//        return "register";
+//    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String getLogin(HttpServletRequest request) {
