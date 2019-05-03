@@ -19,10 +19,6 @@ public class User {
     UserCharacter userCharacter;
 
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    private UserCharacter userCharacter;
-
-
     public User() {
     }
 

@@ -1,59 +1,247 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <title th:text="'City of Crime - ' + ${session.user.firstName + ' ' + session.user.lastName}"></title>></title>
-        <meta http-equiv="X-UA-Compatible" content="IE=9">
-        <meta name="format-detection" content="telephone=no">
-        <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
-        <script type="text/javascript" th:src="@{/script/robbery.js}"></script>
-    </head>
+<head>
+    <title th:text="'City of Crime - ' + ${session.user.firstName + ' ' + session.user.lastName}"></title>></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script type="text/javascript" th:src="@{/script/robbery.js}"></script>
+</head>
 
-    <body data-gr-c-s-loaded="true" style="">
-        <form name="javaForm" method="post" action="./Character" id="javaForm">
-            <div th:replace="fragments/headbar :: copy"></div>
-            <div id="ppm-wrapper">
-                <div th:replace="fragments/subheader :: copy"></div>
+<body data-gr-c-s-loaded="true" style="">
+<form name="javaForm" method="post" action="./Character" id="javaForm">
+    <div th:replace="fragments/headbar :: copy"></div>
+    <div id="ppm-wrapper">
+        <div th:replace="fragments/subheader :: copy"></div>
 
-                <div id="ppm-main">
-                    <div id="ppm-content" role="main" class="content">
-                        <div th:replace="fragments/character :: copy"></div>
-                        <div id="buildings">
-                            <img src="https://i0.wp.com/4.bp.blogspot.com/-5SW37VVXSXw/VlSDCPZ6szI/AAAAAAAABA8/eICdnXnZMww/s1600/cBs05iuT5ELLOJoNC8_Chg-wide.jpg?resize=665%2C443"
-                                width="212px" height="140px">
-                            <p>You need a lot money to buy buildings, but it will pay off sooner or later! Buildings
-                                produce durgs and is a vital part of becoming a real gangster.
-                                Drugs can then be sold to the drug dealer or even better to boats that will buy large
-                                quantities for a very good price!</p>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div th:replace="fragments/sidemenu :: copy"></div>
-                    <div>
-                        <h2 th:text="${#session.getAttribute('job')}"></h2>
-                    </div>
-                    <table class="data quest">
-                            <tbody class="data-tbody">
-                                <tr>
-                                    <th colspan="2" class="single">Prospect</th>
-                                </tr>
-        
-        
-        
-                                <tr class="even">
-                                    <td>Fresh meat, you want to be a champ? Let me show you few tricks that might help you become a Godfather of this world.
-                                    </td>
-                                </tr>
-                                <tr class="odd">    
-                                    <td><button type="button" id="shakers" class="nightlife">Start</button></td>
-                                </tr>
-        
-        
-        
-                            </tbody>
-                    </table>
+        <div id="ppm-main">
+            <div id="ppm-content" role="main" class="content">
+                <div th:replace="fragments/character :: copy"></div>
+                <div id="buildings">
+                    <img src="https://i0.wp.com/4.bp.blogspot.com/-5SW37VVXSXw/VlSDCPZ6szI/AAAAAAAABA8/eICdnXnZMww/s1600/cBs05iuT5ELLOJoNC8_Chg-wide.jpg?resize=665%2C443"
+                         width="212px" height="140px">
+                    <p>You need a lot money to buy buildings, but it will pay off sooner or later! Buildings
+                        produce durgs and is a vital part of becoming a real gangster.
+                        Drugs can then be sold to the drug dealer or even better to boats that will buy large
+                        quantities for a very good price!</p>
                 </div>
-            <div th:replace="fragments/footer :: copy"></div>
-            <div id="ppm-bottom-spacer"></div>
-        </form>
-    </body>
+                <div class="clear"></div>
+            </div>
+            <div th:replace="fragments/sidemenu :: copy"></div>
+            <div>
+                <h2 th:text="${#session.getAttribute('job')}"></h2>
+            </div>
+
+            <div class="container">
+
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th width="40%" nowrap="nowrap">Building</th>
+                        <th width="5%">Units/day</th>
+                        <th width="15%">Price</th>
+                        <th width="15%">Price/Day</th> <!---->
+                        <th width="10%" align="right">&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            Laboratory
+                            <!----></td>
+                        <td><a class=" has-tooltip" aria-describedby="tooltip_fk9w5xzd9n">
+                            393211
+                        </a></td>
+                        <td><a class=" has-tooltip" aria-describedby="tooltip_32wxytczof">
+                            $50,000
+                        </a></td>
+                        <td>$0</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Brewery
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            10500
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $40,000
+                        </a></td>
+                        <td>$4,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Weed field
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            11520
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $75,000
+                        </a></td>
+                        <td>$7,500</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mushroom field
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            8400
+                        </a></td>
+                        <td><a class=" has-tooltip" aria-describedby="tooltip_73tv7ll1p2">
+                            $60,000
+                        </a></td>
+                        <td>$6,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tometo Facility
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            1380
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $250,000
+                        </a></td>
+                        <td>$25,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bieber field
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            2850
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $150,000
+                        </a></td>
+                        <td>$15,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cucumber Facility
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            630
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $500,000
+                        </a></td>
+                        <td>$50,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Parsley Lab
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            5190
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $150,000
+                        </a></td>
+                        <td>$15,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Technology Lab
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            750
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $80,000
+                        </a></td>
+                        <td>$8,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vitamin K Lab
+                            <!----></td>
+                        <td><a class=" has-tooltip">
+                            690
+                        </a></td>
+                        <td><a class=" has-tooltip">
+                            $450,000
+                        </a></td>
+                        <td>$45,000</td> <!---->
+                        <td>
+                            <div class="pull-right">
+                                <button class="btn btn-inverse btn-small">
+                                    Buy
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div th:replace="fragments/footer :: copy"></div>
+        <div id="ppm-bottom-spacer"></div>
+</form>
+</body>
 </html>

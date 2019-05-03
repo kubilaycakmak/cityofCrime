@@ -257,6 +257,10 @@ div#header-commands {
     float: right;
 }
 
+p, td{
+    color: white !important;
+}
+
 .stat {
     color: #501111 !important;
 }
