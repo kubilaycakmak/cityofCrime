@@ -37,6 +37,43 @@ public class MyController {
             return "register";
         }
     }
+    @RequestMapping("/crew")
+    public String getCrew(HttpServletRequest request){
+        session = request.getSession();
+        session.setAttribute("user", query.getUser((String)session.getAttribute("email")));
+        return "crew";
+    }
+    @RequestMapping(value="createCrew",method = RequestMethod.POST)
+    public String createCompany(HttpServletRequest request) {
+        session = request.getSession();
+        String email = (String)session.getAttribute("email");
+        String crewName = request.getParameter("crewName");
+        query.CreateCrew(email,crewName);
+        session.setAttribute("user", query.getUser(email));
+        session.setAttribute("email", email);
+        return "crew";
+    }
+
+    @RequestMapping(value="dropCrew",method = RequestMethod.POST)
+    public String dropCrew(HttpServletRequest request) {
+        session = request.getSession();
+        String email = (String)session.getAttribute("email");
+        query.dropCrew(email);
+        session.setAttribute("user", query.getUser(email));
+        session.setAttribute("email", email);
+        return "crew";
+    }
+
+    @RequestMapping("/donate")
+    public String doDonate(HttpServletRequest request){
+        session = request.getSession();
+        String email = (String)session.getAttribute("email");
+        int money = Integer.parseInt(request.getParameter("donateAmount"));
+        query.donateCrew(email, money);
+        session.setAttribute("user", query.getUser(email));
+        session.setAttribute("email", email);
+        return "crew";
+    }
 
     @RequestMapping("/home")
     public String getHome(HttpServletRequest request) {
@@ -182,6 +219,17 @@ public class MyController {
         session.setAttribute("email", email);
         session.setAttribute("user", query.getUser(email));
         return "equipment";
+
+    }
+    @RequestMapping(value="/getBuilding={id}",method = RequestMethod.POST)
+    public String getBuilding(HttpServletRequest request, @PathVariable("id") String id){
+        session = request.getSession();
+        String email = (String) session.getAttribute("email");
+        query = Query.getQuery();
+        query.getBuilding(id,email);
+        session.setAttribute("email", email);
+        session.setAttribute("user", query.getUser(email));
+        return "buildings";
 
     }
 

@@ -1,8 +1,6 @@
 package com.cityofCrime.cityofCrime.utils;
 
-import com.cityofCrime.cityofCrime.models.Equipments;
-import com.cityofCrime.cityofCrime.models.User;
-import com.cityofCrime.cityofCrime.models.UserCharacter;
+import com.cityofCrime.cityofCrime.models.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -27,7 +25,7 @@ public class Query {
                 check = false;
         }
         if (check) {
-            UserCharacter userCharacter = new UserCharacter(type, 100, 0, 100, 0, 0, 0, 0, 0, 0, null, null, 0, 0);
+            UserCharacter userCharacter = new UserCharacter(type, 100, 0, 100, 0, 0, 0, 0, 0, 0, null, 0,null, 0);
             User user = new User(username, firstName, lastName, email, password, userCharacter);
             transaction = session.beginTransaction();
             session.save(userCharacter);
@@ -68,7 +66,7 @@ public class Query {
         int charisma = 0;
         List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
         if (choose.equals("job1")) {
-            if (users.get(0).getUserCharacter().getPower() > 100 && users.get(0).getUserCharacter().getPower() < 200){
+            if (users.get(0).getUserCharacter().getPower() >= 0 && users.get(0).getUserCharacter().getPower() < 200){
                 stamina = 10;
                 money = 10;
                 respect = 1;
@@ -120,6 +118,7 @@ public class Query {
             users.get(0).getUserCharacter().setTolerance(users.get(0).getUserCharacter().getTolerance() + tolerance);
             users.get(0).getUserCharacter().setCharisma(users.get(0).getUserCharacter().getCharisma() + charisma);
             users.get(0).getUserCharacter().setEquipments(null);
+            users.get(0).getUserCharacter().getCrew().setBuildings(null);
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             session.update(users.get(0).getUserCharacter());
@@ -148,30 +147,24 @@ public class Query {
             case "1":
                 price = 100;
                 power = 30;
-                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
-                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+                users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
 
                 break;
             case "2":
                 price = 800;
                 power = 42;
-                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
-                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
                 users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
                 break;
             case "3":
                 price = 1700;
                 power = 60;
-                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
-                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
                 users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
 
                 break;
             case "4":
                 price = 2500;
                 power = 72;
-                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
-                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+
                 users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
                 break;
             case "5":
@@ -182,6 +175,8 @@ public class Query {
         }
         if (users.get(0).getUserCharacter().getMoney() >= price && users.get(0).getUserCharacter().getEquipment() < 3) {
             users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - price);
+            users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
+            users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
             transaction = session.beginTransaction();
             session.update(users.get(0));
             transaction.commit();
@@ -189,57 +184,82 @@ public class Query {
         }
     }
 
-//    public void getBuilding(String id, String email) {
-//        int money = 0;
-//        session = HibernateUtil.getSessionFactory().openSession();
-//        List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
-//        switch (id) {
-//            case "1":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB1count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
-//                break;
-//            case "2":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB2count(users.get(0).getUserCharacter().getBuildings().get(0).getB2count() + 1);
-//                break;
-//            case "3":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB3count(users.get(0).getUserCharacter().getBuildings().get(0).getB3count() + 1);
-//                break;
-//            case "4":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB4count(users.get(0).getUserCharacter().getBuildings().get(0).getB4count() + 1);
-//                break;
-//            case "5":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB5count(users.get(0).getUserCharacter().getBuildings().get(0).getB5count() + 1);
-//                break;
-//            case "6":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB6count(users.get(0).getUserCharacter().getBuildings().get(0).getB6count() + 1);
-//                break;
-//            case "7":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB7count(users.get(0).getUserCharacter().getBuildings().get(0).getB7count() + 1);
-//                break;
-//            case "8":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB8count(users.get(0).getUserCharacter().getBuildings().get(0).getB8count() + 1);
-//                break;
-//            case "9":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB9count(users.get(0).getUserCharacter().getBuildings().get(0).getB9count() + 1);
-//                break;
-//            case "10":
-//                money = 50000;
-//                users.get(0).getUserCharacter().getBuildings().get(0).setB10count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
-//                break;
-//        }
-//        if (money<=users.get(0).getUserCharacter().getMoney()){
-//            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - money);
-//            session.update(users.get(0));
-//            transaction.commit();
-//            session.close();
-//        }
-//    }
+    public void getBuilding(String id, String email) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
+        int units = 0;
+        int price = 0;
+        int feedaily = 0;
+        switch (id) {
+            case "1":
+                price = 50000;
+                units = 393211;
+                feedaily = 1000;
+                break;
+            case "2":
+                price = 40000;
+                units = 10500;
+                feedaily = 4000;
+                break;
+            case "3":
+                price = 250000;
+                units = 1380;
+                feedaily = 25000;
+
+                break;
+            case "4":
+                price = 150000;
+                units = 2850;
+                feedaily = 15000;
+                break;
+        }
+        if (users.get(0).getUserCharacter().getMoney() >= price) {
+            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - price);
+            transaction = session.beginTransaction();
+            session.update(users.get(0));
+            transaction.commit();
+            session.close();
+        }
+    }
+    public void CreateCrew(String email, String crewName){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+        if (users.get(0).getUserCharacter().getRespect() >= 150 && users.get(0).getUserCharacter().getMoney() >= 120){
+            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - 120);
+            List<Building> buildings = null;
+            Crew crew = new Crew(crewName,0,0, buildings);
+            users.get(0).getUserCharacter().setCrew(crew);
+            transaction = session.beginTransaction();
+            session.save(crew);
+            session.update(users.get(0));
+            transaction.commit();
+            session.close();
+        }else{
+            System.out.println("Not enought money!");
+        }
+    }
+    public void dropCrew(String email){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+            users.get(0).getUserCharacter().setCrew(null);
+            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() + 36);
+            transaction = session.beginTransaction();
+            session.update(users.get(0));
+            transaction.commit();
+            session.close();
+    }
+    public void donateCrew(String email, int money){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<User> users = session.createQuery("from User where email = '"+email+"'",User.class).list();
+        if (users.get(0).getUserCharacter().getMoney() >= money){
+            users.get(0).getUserCharacter().getCrew().setBudget(users.get(0).getUserCharacter().getCrew().getBudget() + money);
+            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - money);
+            transaction = session.beginTransaction();
+            session.update(users.get(0));
+            transaction.commit();
+            session.close();
+        }
+    }
+
+
 }

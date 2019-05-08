@@ -73,6 +73,9 @@
                             <td class="stat" th:text="${session.user.userCharacter.credit}">100</td>
                             <td>Equipment:</td>
                             <td class="stat" th:text="${session.user.userCharacter.equipment}">100</td>
+                            <td>Crew:</td>
+                            <p th:if="${session.user.userCharacter.crew != null}"><td class="stat" th:text="${session.user.userCharacter.crew.getName()}">100</td></p>
+                            <p th:if="${session.user.userCharacter.crew == null}"><td class="stat"><a href="crew">Join!</a></td></p>
                         </tr>
                     </tbody>
                 </table>

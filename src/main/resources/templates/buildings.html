@@ -28,220 +28,97 @@
                 <div class="clear"></div>
             </div>
             <div th:replace="fragments/sidemenu :: copy"></div>
-            <div>
-                <h2 th:text="${#session.getAttribute('job')}"></h2>
-            </div>
+            <div class="box" class="container">
 
-            <div class="container">
+                <style type="text/css">
+                    .tg {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
 
-                <table class="table table-condensed">
-                    <thead>
+                    .tg td {
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        padding: 10px 5px;
+                        border-style: solid;
+                        border-width: 1px;
+                        overflow: hidden;
+                        word-break: normal;
+                        border-color: black;
+                    }
+
+                    .tg th {
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-weight: normal;
+                        padding: 10px 5px;
+                        border-style: solid;
+                        border-width: 1px;
+                        overflow: hidden;
+                        word-break: normal;
+                        border-color: black;
+                    }
+
+                    .tg .tg-0lax {
+                        text-align: left;
+                        vertical-align: top
+                    }
+                </style>
+                <table class="tg">
                     <tr>
-                        <th width="40%" nowrap="nowrap">Building</th>
-                        <th width="5%">Units/day</th>
-                        <th width="15%">Price</th>
-                        <th width="15%">Price/Day</th> <!---->
-                        <th width="10%" align="right">&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            Laboratory
-                            <!----></td>
-                        <td><a class=" has-tooltip" aria-describedby="tooltip_fk9w5xzd9n">
-                            393211
-                        </a></td>
-                        <td><a class=" has-tooltip" aria-describedby="tooltip_32wxytczof">
-                            $50,000
-                        </a></td>
-                        <td>$0</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Brewery
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            10500
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $40,000
-                        </a></td>
-                        <td>$4,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
+                        <th class="tg-0lax">393211</th>
+                        <th class="tg-0lax">30393211</th>
+                        <th class="tg-0lax">$50,000</th>
+                        <th class="tg-0lax">$0</th>
+                        <th>
+                            <form>
+                                <input value="Buy" formmethod="post" type="submit" class="btn btn-inverse btn-small"
+                                       formaction="/getBuilding=1">
+                            </form>
+                        </th>
                     </tr>
                     <tr>
-                        <td>
-                            Weed field
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            11520
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $75,000
-                        </a></td>
-                        <td>$7,500</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
+                        <td class="tg-0lax">Brewery</td>
+                        <td class="tg-0lax">10500</td>
+                        <td class="tg-0lax">$40,000</td>
+                        <td class="tg-0lax">$4,000</td>
+                        <th>
+                            <form>
+                                <input value="Buy" formmethod="post" type="submit" class="btn btn-inverse btn-small"
+                                       formaction="/getBuilding=2">
+                            </form>
+                        </th>
                     </tr>
                     <tr>
-                        <td>
-                            Mushroom field
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            8400
-                        </a></td>
-                        <td><a class=" has-tooltip" aria-describedby="tooltip_73tv7ll1p2">
-                            $60,000
-                        </a></td>
-                        <td>$6,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
+                        <td class="tg-0lax">Tometo Facility</td>
+                        <td class="tg-0lax">1380</td>
+                        <td class="tg-0lax">$250,000</td>
+                        <td class="tg-0lax">$25,000</td>
+                        <th>
+                            <form>
+                                <input value="Buy" formmethod="post" type="submit" class="btn btn-inverse btn-small"
+                                       formaction="/getBuilding=3">
+                            </form>
+                        </th>
                     </tr>
                     <tr>
-                        <td>
-                            Tometo Facility
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            1380
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $250,000
-                        </a></td>
-                        <td>$25,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
+                        <td class="tg-0lax">Bieber field</td>
+                        <td class="tg-0lax">2850</td>
+                        <td class="tg-0lax">$150,000</td>
+                        <td class="tg-0lax">$15,000</td>
+                        <th>
+                            <form>
+                                <input value="Buy" formmethod="post" type="submit" class="btn btn-inverse btn-small"
+                                       formaction="/getBuilding=4">
+                            </form>
+                        </th>
                     </tr>
-                    <tr>
-                        <td>
-                            Bieber field
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            2850
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $150,000
-                        </a></td>
-                        <td>$15,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Cucumber Facility
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            630
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $500,000
-                        </a></td>
-                        <td>$50,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Parsley Lab
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            5190
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $150,000
-                        </a></td>
-                        <td>$15,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Technology Lab
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            750
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $80,000
-                        </a></td>
-                        <td>$8,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Vitamin K Lab
-                            <!----></td>
-                        <td><a class=" has-tooltip">
-                            690
-                        </a></td>
-                        <td><a class=" has-tooltip">
-                            $450,000
-                        </a></td>
-                        <td>$45,000</td> <!---->
-                        <td>
-                            <div class="pull-right">
-                                <button class="btn btn-inverse btn-small">
-                                    Buy
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
                 </table>
             </div>
-
         </div>
-        <div th:replace="fragments/footer :: copy"></div>
-        <div id="ppm-bottom-spacer"></div>
+    </div>
+    <div th:replace="fragments/footer :: copy"></div>
+    <div id="ppm-bottom-spacer"></div>
 </form>
 </body>
 </html>

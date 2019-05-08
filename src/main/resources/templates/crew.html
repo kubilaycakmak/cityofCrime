@@ -1,0 +1,67 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'City of Crime - ' + ${session.user.firstName + ' ' + session.user.lastName}"></title>></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script type="text/javascript" th:src="@{/script/robbery.js}"></script>
+</head>
+
+<body data-gr-c-s-loaded="true" style="">
+<form name="javaForm" method="post" action="./Character" id="javaForm">
+    <div th:replace="fragments/headbar :: copy"></div>
+
+    <div id="ppm-wrapper">
+        <div th:replace="fragments/subheader :: copy"></div>
+
+        <div id="ppm-main">
+            <div id="ppm-content" role="main" class="content">
+                <div th:replace="fragments/character :: copy"></div>
+
+                <div id="robbery">
+                    <img src="https://www.eharmony.co.uk/dating-advice/wp-content/uploads/2017/07/datecabincrew.jpg"
+                         width="212px" height="140px">
+                    <p>What's a day, Hangout with your crew!</p>
+                    <h3>Spend $120 to create a crew!</h3><br>
+                    <h3>If you want to leave, You can get your %30 money to spend!</h3>
+                </div>
+                <div class="clear"></div>
+
+
+            </div>
+            <div th:replace="fragments/sidemenu :: copy"></div>
+
+            <div class="box" id="crimes">
+                <span th:if="${session.user.userCharacter.crew != null}"><h2 th:text="${session.user.userCharacter.crew.getName()}"></h2> </span>
+                <span th:if="${session.user.userCharacter.crew == null}"><h2>Crew Center</h2></span>
+                <div th:if="${session.user.userCharacter.crew == null}">
+                    <form action="/createCrew" method="post">
+                        <input type="text" name="crewName" placeholder="Crew name">
+                        <input type="submit" value="Create!">
+                    </form>
+                </div>
+                <div th:if="${session.user.userCharacter.crew != null}">
+                    <form>
+                        <input formaction="/buildings" formmethod="post" type="submit" value="See Buildings">
+                        <input formaction="/dropCrew" formmethod="post" type="submit" value="Leave!">
+                    </form>
+                    <h3><strong th:text="Members +${': $'+ session.user.userCharacter.crew.getMember()}"></strong></h3>
+                    <h3><strong th:text="Budget +${': $'+session.user.userCharacter.crew.getBudget()}"></strong></h3>
+                </div>
+            </div>
+            <h2>Help Crew</h2>
+                <form action="/donate" method="post">
+                    <input type="text" name="donateAmount" placeholder="Amount">
+                    <input type="submit" value="Donate">
+                </form>
+        </div>
+        <div th:replace="fragments/footer :: copy"></div>
+
+    </div>
+    <div id="ppm-bottom-spacer"></div>
+</form>
+
+
+</body>
+
+</html>

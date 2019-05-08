@@ -1,7 +1,6 @@
 package com.cityofCrime.cityofCrime.models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Equipments {
