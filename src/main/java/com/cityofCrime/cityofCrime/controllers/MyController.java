@@ -5,6 +5,7 @@ import com.cityofCrime.cityofCrime.models.UserCharacter;
 import com.cityofCrime.cityofCrime.utils.Query;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -102,6 +103,7 @@ public class MyController {
         return "prison";
     }
 
+
     @RequestMapping(value = "/nightclub", method = RequestMethod.POST)
     public String getNightclub(HttpServletRequest request) {
         int money = 20;
@@ -169,6 +171,18 @@ public class MyController {
         session.setAttribute("user", query.getUser(email));
         return "robbery";
     }
+    @RequestMapping(value="/getEquipment={id}",method = RequestMethod.POST)
+    public String getEquipments(HttpServletRequest request, @PathVariable("id") String id){
+        session = request.getSession();
+        String email = (String) session.getAttribute("email");
 
-    
+        query = Query.getQuery();
+        query.getEquipments(id,email);
+
+        session.setAttribute("email", email);
+        session.setAttribute("user", query.getUser(email));
+        return "equipment";
+
+    }
+
 }

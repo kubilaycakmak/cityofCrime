@@ -29,6 +29,7 @@ public class UserCharacter {
     int tolerance;
     int charisma;
     int power;
+    int equipment;
 
 
 //    @OneToMany(fetch = FetchType.EAGER)
@@ -46,7 +47,7 @@ public class UserCharacter {
         super();
     }
 
-    public UserCharacter(int type, int money, int experience, int stamina, int respect, int intelligence, int strength, int tolerance, int charisma, int power, List<Equipments> equipments, List<Building> buildings, int credit) {
+    public UserCharacter(int type, int money, int experience, int stamina, int respect, int intelligence, int strength, int tolerance, int charisma, int power, List<Equipments> equipments, List<Building> buildings,int equipment, int credit) {
         this.type = type;
         this.money = money;
         this.experience = experience;
@@ -59,12 +60,21 @@ public class UserCharacter {
         this.power = power;
         this.equipments = equipments;
 //        this.buildings = buildings;
+        this.equipment = equipment;
         this.credit = credit;
     }
 
 
     public int getId() {
         return id;
+    }
+
+    public int getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(int equipment) {
+        this.equipment = equipment;
     }
 
     public int getStrength() {

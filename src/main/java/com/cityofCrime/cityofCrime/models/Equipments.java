@@ -1,9 +1,7 @@
 package com.cityofCrime.cityofCrime.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Equipments {
@@ -12,7 +10,6 @@ public class Equipments {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String equipmentName;
     int power;
     int price;
 
@@ -20,22 +17,13 @@ public class Equipments {
         super();
     }
 
-    public Equipments(String equipmentName, int power, int price) {
-        this.equipmentName = equipmentName;
+    public Equipments(int power, int price) {
         this.power = power;
         this.price = price;
     }
 
     public int getId() {
         return id;
-    }
-
-    public String getEquipmentName() {
-        return equipmentName;
-    }
-
-    public void setEquipmentName(String equipmentName) {
-        this.equipmentName = equipmentName;
     }
 
     public int getPower() {

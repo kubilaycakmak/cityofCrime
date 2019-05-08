@@ -1,5 +1,6 @@
 package com.cityofCrime.cityofCrime.utils;
 
+import com.cityofCrime.cityofCrime.models.Equipments;
 import com.cityofCrime.cityofCrime.models.User;
 import com.cityofCrime.cityofCrime.models.UserCharacter;
 import org.hibernate.Session;
@@ -26,7 +27,7 @@ public class Query {
                 check = false;
         }
         if (check) {
-            UserCharacter userCharacter = new UserCharacter(type, 100, 0, 100, 0, 0, 0, 0, 0, 0, null, null, 0);
+            UserCharacter userCharacter = new UserCharacter(type, 100, 0, 100, 0, 0, 0, 0, 0, 0, null, null, 0, 0);
             User user = new User(username, firstName, lastName, email, password, userCharacter);
             transaction = session.beginTransaction();
             session.save(userCharacter);
@@ -67,13 +68,32 @@ public class Query {
         int charisma = 0;
         List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
         if (choose.equals("job1")) {
-            stamina = 10;
-            money = 10;
-            respect = 1;
-            intelligence = 1;
-            strength = 1;
-            tolerance = 1;
-            charisma = 1;
+            if (users.get(0).getUserCharacter().getPower() > 100 && users.get(0).getUserCharacter().getPower() < 200){
+                stamina = 10;
+                money = 10;
+                respect = 1;
+                intelligence = 1;
+                strength = 1;
+                tolerance = 1;
+                charisma = 1;
+            }else if (users.get(0).getUserCharacter().getPower() > 200 && users.get(0).getUserCharacter().getPower() < 300){
+                stamina = 10;
+                money = 20;
+                respect = 2;
+                intelligence = 2;
+                strength = 2;
+                tolerance = 2;
+                charisma = 2;
+            }else if (users.get(0).getUserCharacter().getPower() > 300){
+                stamina = 10;
+                money = 30;
+                respect = 3;
+                intelligence = 4;
+                strength = 4;
+                tolerance = 5;
+                charisma = 6;
+            }
+
         } else if (choose.equals("job2")) {
             stamina = 15;
             money = 20;
@@ -107,6 +127,7 @@ public class Query {
             transaction.commit();
             session.close();
             check = true;
+
         }
         return check;
     }
@@ -116,6 +137,56 @@ public class Query {
             query = new Query();
 
         return query;
+    }
+
+    public void getEquipments(String id, String email) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
+        int power = 0;
+        int price = 0;
+        switch (id) {
+            case "1":
+                price = 100;
+                power = 30;
+                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
+                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+
+                break;
+            case "2":
+                price = 800;
+                power = 42;
+                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
+                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+                users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
+                break;
+            case "3":
+                price = 1700;
+                power = 60;
+                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
+                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+                users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
+
+                break;
+            case "4":
+                price = 2500;
+                power = 72;
+                users.get(0).getUserCharacter().setStrength(users.get(0).getUserCharacter().getStrength() + power);
+                users.get(0).getUserCharacter().setPower(users.get(0).getUserCharacter().getPower() + power);
+                users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() + 1);
+                break;
+            case "5":
+                price = 10000;
+                power = 0;
+                users.get(0).getUserCharacter().setEquipment(users.get(0).getUserCharacter().getEquipment() - 1);
+                break;
+        }
+        if (users.get(0).getUserCharacter().getMoney() >= price && users.get(0).getUserCharacter().getEquipment() < 3) {
+            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - price);
+            transaction = session.beginTransaction();
+            session.update(users.get(0));
+            transaction.commit();
+            session.close();
+        }
     }
 
 //    public void getBuilding(String id, String email) {
