@@ -31,9 +31,9 @@ public class UserCharacter {
     int power;
 
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @Cascade(CascadeType.ALL)
-    List<Building> buildings;
+//    @OneToMany(fetch = FetchType.EAGER)
+//    @Cascade(CascadeType.ALL)
+//    List<Building> buildings;
 
 
     @OneToMany(fetch = FetchType.EAGER)
@@ -58,7 +58,7 @@ public class UserCharacter {
         this.charisma = charisma;
         this.power = power;
         this.equipments = equipments;
-        this.buildings = buildings;
+//        this.buildings = buildings;
         this.credit = credit;
     }
 
@@ -155,13 +155,13 @@ public class UserCharacter {
         this.equipments = equipments;
     }
 
-    public List<Building> getBuildings() {
-        return buildings;
-    }
+//    public List<Building> getBuildings() {
+//        return buildings;
+//    }
 
-    public void setBuildings(List<Building> buildings) {
-        this.buildings = buildings;
-    }
+//    public void setBuildings(List<Building> buildings) {
+//        this.buildings = buildings;
+//    }
 
     public int getCredit() {
         return credit;

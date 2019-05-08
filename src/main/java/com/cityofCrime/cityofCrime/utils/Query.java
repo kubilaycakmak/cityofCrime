@@ -118,57 +118,57 @@ public class Query {
         return query;
     }
 
-    public void getBuilding(String id, String email) {
-        int money = 0;
-        session = HibernateUtil.getSessionFactory().openSession();
-        List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
-        switch (id) {
-            case "1":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB1count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
-                break;
-            case "2":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB2count(users.get(0).getUserCharacter().getBuildings().get(0).getB2count() + 1);
-                break;
-            case "3":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB3count(users.get(0).getUserCharacter().getBuildings().get(0).getB3count() + 1);
-                break;
-            case "4":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB4count(users.get(0).getUserCharacter().getBuildings().get(0).getB4count() + 1);
-                break;
-            case "5":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB5count(users.get(0).getUserCharacter().getBuildings().get(0).getB5count() + 1);
-                break;
-            case "6":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB6count(users.get(0).getUserCharacter().getBuildings().get(0).getB6count() + 1);
-                break;
-            case "7":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB7count(users.get(0).getUserCharacter().getBuildings().get(0).getB7count() + 1);
-                break;
-            case "8":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB8count(users.get(0).getUserCharacter().getBuildings().get(0).getB8count() + 1);
-                break;
-            case "9":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB9count(users.get(0).getUserCharacter().getBuildings().get(0).getB9count() + 1);
-                break;
-            case "10":
-                money = 50000;
-                users.get(0).getUserCharacter().getBuildings().get(0).setB10count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
-                break;
-        }
-        if (money<=users.get(0).getUserCharacter().getMoney()){
-            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - money);
-            session.update(users.get(0));
-            transaction.commit();
-            session.close();
-        }
-    }
+//    public void getBuilding(String id, String email) {
+//        int money = 0;
+//        session = HibernateUtil.getSessionFactory().openSession();
+//        List<User> users = session.createQuery("from User where email = '" + email + "'", User.class).list();
+//        switch (id) {
+//            case "1":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB1count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
+//                break;
+//            case "2":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB2count(users.get(0).getUserCharacter().getBuildings().get(0).getB2count() + 1);
+//                break;
+//            case "3":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB3count(users.get(0).getUserCharacter().getBuildings().get(0).getB3count() + 1);
+//                break;
+//            case "4":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB4count(users.get(0).getUserCharacter().getBuildings().get(0).getB4count() + 1);
+//                break;
+//            case "5":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB5count(users.get(0).getUserCharacter().getBuildings().get(0).getB5count() + 1);
+//                break;
+//            case "6":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB6count(users.get(0).getUserCharacter().getBuildings().get(0).getB6count() + 1);
+//                break;
+//            case "7":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB7count(users.get(0).getUserCharacter().getBuildings().get(0).getB7count() + 1);
+//                break;
+//            case "8":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB8count(users.get(0).getUserCharacter().getBuildings().get(0).getB8count() + 1);
+//                break;
+//            case "9":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB9count(users.get(0).getUserCharacter().getBuildings().get(0).getB9count() + 1);
+//                break;
+//            case "10":
+//                money = 50000;
+//                users.get(0).getUserCharacter().getBuildings().get(0).setB10count(users.get(0).getUserCharacter().getBuildings().get(0).getB1count() + 1);
+//                break;
+//        }
+//        if (money<=users.get(0).getUserCharacter().getMoney()){
+//            users.get(0).getUserCharacter().setMoney(users.get(0).getUserCharacter().getMoney() - money);
+//            session.update(users.get(0));
+//            transaction.commit();
+//            session.close();
+//        }
+//    }
 }
